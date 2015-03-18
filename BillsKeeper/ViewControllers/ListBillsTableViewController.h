@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListBillsTableViewController.h
 //  BillsKeeper
 //
 //  Created by DOUINEAU Romain on 18/03/2015.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ListBillsTableViewController : UITableViewController
 
 @end
-

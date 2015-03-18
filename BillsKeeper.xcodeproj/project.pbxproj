@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		943CDA8C1AB9BBA300D4C186 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDA8B1AB9BBA300D4C186 /* main.m */; };
 		943CDA8F1AB9BBA300D4C186 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDA8E1AB9BBA300D4C186 /* AppDelegate.m */; };
-		943CDA921AB9BBA300D4C186 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDA911AB9BBA300D4C186 /* ViewController.m */; };
 		943CDA951AB9BBA300D4C186 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943CDA931AB9BBA300D4C186 /* Main.storyboard */; };
 		943CDA971AB9BBA300D4C186 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943CDA961AB9BBA300D4C186 /* Images.xcassets */; };
 		943CDA9A1AB9BBA300D4C186 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943CDA981AB9BBA300D4C186 /* LaunchScreen.xib */; };
 		943CDAA61AB9BBA300D4C186 /* BillsKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAA51AB9BBA300D4C186 /* BillsKeeperTests.m */; };
+		943CDAB11AB9DA7900D4C186 /* ListBillsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAB01AB9DA7900D4C186 /* ListBillsTableViewController.m */; };
+		943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAB51AB9DB4700D4C186 /* BillsViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,16 @@
 		943CDA8B1AB9BBA300D4C186 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		943CDA8D1AB9BBA300D4C186 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		943CDA8E1AB9BBA300D4C186 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		943CDA901AB9BBA300D4C186 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		943CDA911AB9BBA300D4C186 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		943CDA941AB9BBA300D4C186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		943CDA961AB9BBA300D4C186 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		943CDA991AB9BBA300D4C186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		943CDA9F1AB9BBA300D4C186 /* BillsKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillsKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		943CDAA41AB9BBA300D4C186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		943CDAA51AB9BBA300D4C186 /* BillsKeeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillsKeeperTests.m; sourceTree = "<group>"; };
+		943CDAAF1AB9DA7900D4C186 /* ListBillsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListBillsTableViewController.h; path = ViewControllers/ListBillsTableViewController.h; sourceTree = "<group>"; };
+		943CDAB01AB9DA7900D4C186 /* ListBillsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListBillsTableViewController.m; path = ViewControllers/ListBillsTableViewController.m; sourceTree = "<group>"; };
+		943CDAB41AB9DB4700D4C186 /* BillsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillsViewCell.h; path = ViewControllers/BillsViewCell.h; sourceTree = "<group>"; };
+		943CDAB51AB9DB4700D4C186 /* BillsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillsViewCell.m; path = ViewControllers/BillsViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +84,9 @@
 		943CDA881AB9BBA300D4C186 /* BillsKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				943CDAB21AB9DA8C00D4C186 /* ViewControllers */,
 				943CDA8D1AB9BBA300D4C186 /* AppDelegate.h */,
 				943CDA8E1AB9BBA300D4C186 /* AppDelegate.m */,
-				943CDA901AB9BBA300D4C186 /* ViewController.h */,
-				943CDA911AB9BBA300D4C186 /* ViewController.m */,
 				943CDA931AB9BBA300D4C186 /* Main.storyboard */,
 				943CDA961AB9BBA300D4C186 /* Images.xcassets */,
 				943CDA981AB9BBA300D4C186 /* LaunchScreen.xib */,
@@ -117,6 +119,25 @@
 				943CDAA41AB9BBA300D4C186 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		943CDAB21AB9DA8C00D4C186 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				943CDAB31AB9DA9C00D4C186 /* ListBills */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		943CDAB31AB9DA9C00D4C186 /* ListBills */ = {
+			isa = PBXGroup;
+			children = (
+				943CDAAF1AB9DA7900D4C186 /* ListBillsTableViewController.h */,
+				943CDAB01AB9DA7900D4C186 /* ListBillsTableViewController.m */,
+				943CDAB41AB9DB4700D4C186 /* BillsViewCell.h */,
+				943CDAB51AB9DB4700D4C186 /* BillsViewCell.m */,
+			);
+			name = ListBills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943CDA921AB9BBA300D4C186 /* ViewController.m in Sources */,
+				943CDAB11AB9DA7900D4C186 /* ListBillsTableViewController.m in Sources */,
 				943CDA8F1AB9BBA300D4C186 /* AppDelegate.m in Sources */,
 				943CDA8C1AB9BBA300D4C186 /* main.m in Sources */,
+				943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +434,7 @@
 				943CDAAB1AB9BBA300D4C186 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		943CDAAC1AB9BBA300D4C186 /* Build configuration list for PBXNativeTarget "BillsKeeperTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +443,7 @@
 				943CDAAE1AB9BBA300D4C186 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -25,6 +25,7 @@
 		943CDB141ABB008000D4C186 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB131ABB008000D4C186 /* NSDate+Helper.m */; };
 		9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */; };
 		946C2AB41ABB26C100324BF0 /* backInfoDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB31ABB26C100324BF0 /* backInfoDetails.png */; };
+		946C2AB61ABB3DAA00324BF0 /* backBlackDetail.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB51ABB3DAA00324BF0 /* backBlackDetail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShootViewController.h; path = ViewControllers/ShootViewController.h; sourceTree = "<group>"; };
 		9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShootViewController.m; path = ViewControllers/ShootViewController.m; sourceTree = "<group>"; };
 		946C2AB31ABB26C100324BF0 /* backInfoDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backInfoDetails.png; sourceTree = "<group>"; };
+		946C2AB51ABB3DAA00324BF0 /* backBlackDetail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBlackDetail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		943CDACB1ABAB4C000D4C186 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				946C2AB51ABB3DAA00324BF0 /* backBlackDetail.png */,
 				946C2AB31ABB26C100324BF0 /* backInfoDetails.png */,
 				943CDB0B1ABADD7F00D4C186 /* specialClass */,
 				943CDACC1ABAB4D100D4C186 /* bill1.jpg */,
@@ -324,6 +327,7 @@
 				943CDACD1ABAB4D100D4C186 /* bill1.jpg in Resources */,
 				943CDA951AB9BBA300D4C186 /* Main.storyboard in Resources */,
 				943CDA9A1AB9BBA300D4C186 /* LaunchScreen.xib in Resources */,
+				946C2AB61ABB3DAA00324BF0 /* backBlackDetail.png in Resources */,
 				943CDA971AB9BBA300D4C186 /* Images.xcassets in Resources */,
 				946C2AB41ABB26C100324BF0 /* backInfoDetails.png in Resources */,
 			);

@@ -57,7 +57,7 @@
                                             <color key="textColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="145.66" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-0b-ga9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="145.66" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-0b-ga9">
                                             <rect key="frame" x="216" y="32" width="53" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="53" id="840-7H-rgS"/>
@@ -195,7 +195,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kgI-G5-Bw3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="kgI-G5-Bw3" secondAttribute="height" multiplier="16:15" id="ESs-NH-TQZ"/>
                                                         <constraint firstAttribute="height" constant="428" id="HbL-Wz-oSC"/>
@@ -209,19 +209,28 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-Cp-dew">
-                                                    <rect key="frame" x="14" y="257" width="298" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-Cp-dew">
+                                                    <rect key="frame" x="14" y="260" width="298" height="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <imageView userInteractionEnabled="NO" alpha="0.64999999999999969" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBlackDetail.png" translatesAutoresizingMaskIntoConstraints="NO" id="txM-dm-0Hz">
+                                                    <rect key="frame" x="0.0" y="182" width="320" height="117"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="117" id="h0J-KB-Y7M"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Sh5-Cp-dew" firstAttribute="trailing" secondItem="DtX-bh-cx8" secondAttribute="trailingMargin" id="3Ll-6P-I7r"/>
+                                                <constraint firstItem="txM-dm-0Hz" firstAttribute="leading" secondItem="DtX-bh-cx8" secondAttribute="leading" id="7fM-Dl-pof"/>
                                                 <constraint firstItem="Sh5-Cp-dew" firstAttribute="bottom" secondItem="kgI-G5-Bw3" secondAttribute="bottom" constant="-13" id="8DI-rm-oN7"/>
                                                 <constraint firstAttribute="trailing" secondItem="kgI-G5-Bw3" secondAttribute="trailing" id="Ddi-5f-aQ4"/>
                                                 <constraint firstItem="kgI-G5-Bw3" firstAttribute="top" secondItem="DtX-bh-cx8" secondAttribute="top" id="DkT-2O-AVv"/>
+                                                <constraint firstAttribute="bottom" secondItem="txM-dm-0Hz" secondAttribute="bottom" id="Ge4-3d-8em"/>
                                                 <constraint firstAttribute="bottom" secondItem="Sh5-Cp-dew" secondAttribute="bottom" constant="12" id="LBT-1i-dL8"/>
+                                                <constraint firstAttribute="trailing" secondItem="txM-dm-0Hz" secondAttribute="trailing" id="Plf-gB-ail"/>
                                                 <constraint firstAttribute="trailing" secondItem="kgI-G5-Bw3" secondAttribute="trailing" id="RKh-h2-433"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kgI-G5-Bw3" secondAttribute="bottom" constant="-9" id="k61-ju-BuQ"/>
                                                 <constraint firstItem="kgI-G5-Bw3" firstAttribute="leading" secondItem="DtX-bh-cx8" secondAttribute="leading" id="mEa-zO-k4u"/>
@@ -340,7 +349,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tr-bm-Xsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="1001"/>
+            <point key="canvasLocation" x="1232" y="996"/>
         </scene>
         <!--Categories-->
         <scene sceneID="q0B-Qk-xiv">
@@ -441,6 +450,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backBlackDetail.png" width="320" height="117"/>
         <image name="backInfoDetails.png" width="637" height="133"/>
         <image name="bill1.jpg" width="535" height="712"/>
     </resources>

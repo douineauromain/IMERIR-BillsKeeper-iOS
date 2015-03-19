@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.buttonCategory setTitle:@"Others" forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

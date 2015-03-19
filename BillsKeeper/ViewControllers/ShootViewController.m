@@ -56,6 +56,7 @@
     // Create object
     Bill *theBill = [[Bill alloc] init];
     theBill.imageLink = [NSString stringWithFormat:@"%d.png", theBill.objectId];
+    theBill.imageLowLink = [NSString stringWithFormat:@"%d-low.png", theBill.objectId];
     
     // Get the default Realm
     RLMRealm *realm = [RLMRealm defaultRealm];
@@ -68,7 +69,9 @@
     
     NSLog(@"Le bill a été sav");
     
-    [lowImage saveScan:theBill.imageLink];
+    [chosenImage saveScan:theBill.imageLink];
+    [lowImage saveScan:theBill.imageLowLink];
+    
     
     NSLog(@"L'image a été sav");
     

@@ -19,6 +19,7 @@
         self.dateBill = [NSDate date];
         self.dateShoot = [NSDate date];
         self.imageLink = @"noimg.png";
+        self.imageLowLink = @"noimg.png";
         self.category = @"Other";
         self.user = @"noUser";
         self.descriptionBill = @"No description";

@@ -11,5 +11,7 @@
 @interface DetailBillViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonCategory;
+@property (weak, nonatomic) IBOutlet UIImageView *imageBill;
+@property (weak, nonatomic) IBOutlet UILabel *labelDate;
 
 @end

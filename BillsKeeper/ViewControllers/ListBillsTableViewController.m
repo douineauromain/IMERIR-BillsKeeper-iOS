@@ -93,7 +93,7 @@
     cell.dateBill.text = [NSDate stringForDisplayFromDate:theBillDate];
     cell.amount.text = [NSString stringWithFormat:@"%f",theBill.amount];
     
-    UIImage *theBillImage = [UIImage imageWithScan:theBill.imageLink];
+    UIImage *theBillImage = [UIImage imageWithScan:theBill.imageLowLink];
     cell.image.image = theBillImage;
     
     return cell;

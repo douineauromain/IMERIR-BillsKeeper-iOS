@@ -28,6 +28,12 @@
     
     if ([self.fromShoot boolValue] != NO) { //from shoot
         [self.textFeildName becomeFirstResponder];
+        
+        UITableViewCell *firstCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"firstCell"];
+        
+        [self.tableView scrollToRowAtIndexPath:[self.tableView indexPathForCell:firstCell]
+    atScrollPosition:UITableViewScrollPositionBottom
+    animated:YES];
     }
     
 }
@@ -57,13 +63,19 @@
     
     [self.tableView reloadData];
     
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated{
     //Bouton category
     if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"tempCategory"] isEqualToString:@""]) {
         NSLog(@"Il n'y a pas de variable temporaire tempCategory");
     } else {
+        NSLog(@"Il y a une variable temporaire tempCategory : %@",[[NSUserDefaults standardUserDefaults]stringForKey:@"tempCategory"]);
+        
         self.buttonCategory.titleLabel.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"tempCategory"];
     }
- 
+    
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tempCategory"];
 }
 

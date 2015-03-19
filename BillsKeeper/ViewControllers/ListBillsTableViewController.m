@@ -12,6 +12,7 @@
 #import "BillsViewCell.h"
 #import "NSDate+Helper.h"
 #import "UIImage+loadScan.h"
+#import "DetailBillViewController.h"
 
 @interface ListBillsTableViewController (){
     RLMResults *allBill;
@@ -96,9 +97,9 @@
     UIImage *theBillImage = [UIImage imageWithScan:theBill.imageLowLink];
     cell.image.image = theBillImage;
     
+    
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -134,15 +135,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetailsBill"]) {
+        //objectIDOfSelectedCell
+        DetailBillViewController *DBVC = [segue destinationViewController];
+        NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
+        DBVC.indexOfSelectedCellReceived = [NSNumber numberWithInt: selectedIndex];
+        
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 
 

@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailBillViewController : UIViewController
+@interface DetailBillViewController : UITableViewController
+
+@property (strong) NSNumber *indexOfSelectedCellReceived;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageBillHigh;
+@property (weak, nonatomic) IBOutlet UITextField *textFeildName;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonCategory;
-@property (weak, nonatomic) IBOutlet UIImageView *imageBill;
+
+@property (weak, nonatomic) IBOutlet UITextField *textFeildAmout;
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
 
 @end

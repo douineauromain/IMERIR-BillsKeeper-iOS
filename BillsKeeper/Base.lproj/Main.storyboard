@@ -38,6 +38,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ntY-aN-mX6">
                             <connections>
                                 <action selector="buttonAddBillTouch:" destination="nxK-3H-Gf6" id="p1R-0U-Je4"/>
+                                <segue destination="Rvn-9h-PEa" kind="show" identifier="showShoot" id="dhp-iP-Z9b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,6 +50,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156" y="350"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZJC-RT-WPK">
+            <objects>
+                <viewController id="Rvn-9h-PEa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hyY-vF-q5L"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qmt-WB-C0z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aw1-wp-tXD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tiQ-R5-jX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568" y="-193"/>
         </scene>
         <!--Detail Bill View Controller-->
         <scene sceneID="nxh-Q0-6sj">

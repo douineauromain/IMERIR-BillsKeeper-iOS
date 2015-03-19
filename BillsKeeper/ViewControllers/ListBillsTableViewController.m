@@ -7,8 +7,7 @@
 //
 
 #import "ListBillsTableViewController.h"
-#import "ShootViewController.h"
-#import "CategoriesTableViewController.h"
+#import "CategoryTableViewController.h"
 
 @interface ListBillsTableViewController ()
 
@@ -100,12 +99,10 @@
 */
 
 - (IBAction)buttonAddBillTouch:(id)sender {
-    ShootViewController *shootVC = [[ShootViewController alloc] init];
-    [self.navigationController pushViewController:shootVC animated:YES];
 }
 
 - (IBAction)buttonTestTouch:(id)sender {
-    CategoriesTableViewController* categoryVC = [[CategoriesTableViewController alloc] init];
+    CategoryTableViewController* categoryVC = [[CategoryTableViewController alloc] init];
     [self.navigationController pushViewController:categoryVC animated:YES];
 }
 @end

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wXh-7Q-b7t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="wXh-7Q-b7t">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Bills Keeper-->
@@ -14,13 +13,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="TH7-hv-ZLb" customClass="BillsViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="billCell" rowHeight="83" id="TH7-hv-ZLb" customClass="BillsViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TH7-hv-ZLb" id="qSD-rC-J7Z">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="JlO-lX-wsI" kind="show" identifier="showDetailsBill" id="W84-tX-61B"/>
+                                    <segue destination="JlO-lX-wsI" kind="push" identifier="showDetailsBill" id="W84-tX-61B"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -33,12 +32,13 @@
                         <barButtonItem key="leftBarButtonItem" title="Test" id="mVF-2X-MFn">
                             <connections>
                                 <action selector="buttonTestTouch:" destination="nxK-3H-Gf6" id="xMD-HM-mDe"/>
+                                <segue destination="WCc-WR-17w" kind="push" id="Whf-ua-IPb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ntY-aN-mX6">
                             <connections>
                                 <action selector="buttonAddBillTouch:" destination="nxK-3H-Gf6" id="p1R-0U-Je4"/>
-                                <segue destination="Rvn-9h-PEa" kind="show" identifier="showShoot" id="dhp-iP-Z9b"/>
+                                <segue destination="Rvn-9h-PEa" kind="push" identifier="showShoot" id="dhp-iP-Z9b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,89 +49,92 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="350"/>
+            <point key="canvasLocation" x="616.5333333333333" y="331.33333333333331"/>
         </scene>
-        <!--View Controller-->
+        <!--Shoot View Controller-->
         <scene sceneID="ZJC-RT-WPK">
             <objects>
-                <viewController id="Rvn-9h-PEa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hyY-vF-q5L"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qmt-WB-C0z"/>
-                    </layoutGuides>
+                <viewController id="Rvn-9h-PEa" customClass="ShootViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aw1-wp-tXD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="klb-Og-cal">
+                                <rect key="frame" x="0.0" y="64" width="320" height="301"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1xN-h9-Iak">
+                                <rect key="frame" x="137" y="406" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSelectPicture:" destination="Rvn-9h-PEa" eventType="touchUpInside" id="QmN-NS-8np"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pa8-ff-l1J">
+                                <rect key="frame" x="111" y="373" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Prendre Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTakePicture:" destination="Rvn-9h-PEa" eventType="touchUpInside" id="m1I-fE-PKP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Dyn-bn-kAp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="shootImageView" destination="klb-Og-cal" id="cff-SG-bSF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiQ-R5-jX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="-193"/>
+            <point key="canvasLocation" x="866" y="-350"/>
         </scene>
         <!--Detail Bill View Controller-->
         <scene sceneID="nxh-Q0-6sj">
             <objects>
                 <viewController id="JlO-lX-wsI" customClass="DetailBillViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dnb-jv-m1E"/>
-                        <viewControllerLayoutGuide type="bottom" id="JpW-kc-958"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eyU-Bo-zOg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2I-6U8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill1.jpg" id="DrY-2I-6U8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="DIW-I8-blk"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkf-BS-zSG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" id="dkf-BS-zSG">
                                 <rect key="frame" x="26" y="251" width="163" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-o2-0LA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gXJ-o2-0LA">
                                 <rect key="frame" x="166" y="315" width="124" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="124" id="T7C-WK-Gdt"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Other">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WCc-WR-17w" kind="show" id="cvE-19-xdJ"/>
+                                    <segue destination="WCc-WR-17w" kind="push" id="cvE-19-xdJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gXJ-o2-0LA" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="15" id="0Om-SF-F57"/>
-                            <constraint firstAttribute="trailing" secondItem="gXJ-o2-0LA" secondAttribute="trailing" constant="30" id="0S1-xq-Aqq"/>
-                            <constraint firstItem="dkf-BS-zSG" firstAttribute="leading" secondItem="eyU-Bo-zOg" secondAttribute="leadingMargin" constant="10" id="2sq-75-a8a"/>
-                            <constraint firstItem="DrY-2I-6U8" firstAttribute="leading" secondItem="dkf-BS-zSG" secondAttribute="trailing" constant="-304" id="5KE-V1-iwf"/>
-                            <constraint firstItem="dkf-BS-zSG" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="-56" id="7eK-ao-Gp3"/>
-                            <constraint firstItem="DrY-2I-6U8" firstAttribute="leading" secondItem="eyU-Bo-zOg" secondAttribute="leading" id="AdG-2r-hUW"/>
-                            <constraint firstItem="DrY-2I-6U8" firstAttribute="top" secondItem="eyU-Bo-zOg" secondAttribute="top" id="KP5-kW-nbl"/>
-                            <constraint firstAttribute="trailing" secondItem="DrY-2I-6U8" secondAttribute="trailing" id="RzR-WD-50y"/>
-                            <constraint firstItem="dkf-BS-zSG" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="-49" id="jo1-sX-dvq"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5KE-V1-iwf"/>
-                                <exclude reference="7eK-ao-Gp3"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="sW3-So-5pm"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbV-uO-Fg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1625" y="350"/>
+            <point key="canvasLocation" x="866.66666666666663" y="331.33333333333331"/>
         </scene>
         <!--Category Table View Controller-->
         <scene sceneID="q0B-Qk-xiv">
@@ -142,10 +145,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v2Y-cd-LGE">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="4bM-8C-dxb" style="IBUITableViewCellStyleDefault" id="v2Y-cd-LGE">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v2Y-cd-LGE" id="ZRb-bY-Mgm">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4bM-8C-dxb">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -154,11 +165,12 @@
                             <outlet property="delegate" destination="WCc-WR-17w" id="IcC-G4-D97"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="4gn-BT-IdW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-lJ-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090" y="394"/>
+            <point key="canvasLocation" x="1104.5333333333333" y="267.90666666666664"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n0S-f6-Tlq">
@@ -177,10 +189,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxX-kb-mhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="350"/>
+            <point key="canvasLocation" x="384" y="331.33333333333331"/>
         </scene>
     </scenes>
     <resources>
         <image name="bill1.jpg" width="535" height="712"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="cvE-19-xdJ"/>
+    </inferredMetricsTieBreakers>
 </document>

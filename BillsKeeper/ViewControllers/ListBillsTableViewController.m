@@ -23,6 +23,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,7 +103,7 @@
 }
 
 - (IBAction)buttonTestTouch:(id)sender {
-    CategoryTableViewController* categoryVC = [[CategoryTableViewController alloc] init];
-    [self.navigationController pushViewController:categoryVC animated:YES];
+    /*CategoryTableViewController* categoryVC = [[CategoryTableViewController alloc] init];
+    [self.navigationController pushViewController:categoryVC animated:YES];*/
 }
 @end

@@ -18,6 +18,10 @@
 		943CDACD1ABAB4D100D4C186 /* bill1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 943CDACC1ABAB4D100D4C186 /* bill1.jpg */; };
 		943CDAF01ABACA9500D4C186 /* DetailBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAEF1ABACA9500D4C186 /* DetailBillViewController.m */; };
 		943CDAF81ABACECB00D4C186 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAF71ABACECB00D4C186 /* CategoryTableViewController.m */; };
+		943CDAFC1ABAD19300D4C186 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CDAFB1ABAD19300D4C186 /* libc++.dylib */; };
+		943CDB061ABAD39700D4C186 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CDB051ABAD39700D4C186 /* Realm.framework */; };
+		943CDB0A1ABAD55B00D4C186 /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB091ABAD55B00D4C186 /* Bill.m */; };
+		9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		943CDAEF1ABACA9500D4C186 /* DetailBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailBillViewController.m; path = ViewControllers/DetailBillViewController.m; sourceTree = "<group>"; };
 		943CDAF61ABACECB00D4C186 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTableViewController.h; path = ViewControllers/CategoryTableViewController.h; sourceTree = "<group>"; };
 		943CDAF71ABACECB00D4C186 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTableViewController.m; path = ViewControllers/CategoryTableViewController.m; sourceTree = "<group>"; };
+		943CDAFB1ABAD19300D4C186 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		943CDB051ABAD39700D4C186 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
+		943CDB081ABAD55B00D4C186 /* Bill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bill.h; path = RealmClass/Bill.h; sourceTree = "<group>"; };
+		943CDB091ABAD55B00D4C186 /* Bill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bill.m; path = RealmClass/Bill.m; sourceTree = "<group>"; };
+		9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShootViewController.h; path = ViewControllers/ShootViewController.h; sourceTree = "<group>"; };
+		9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShootViewController.m; path = ViewControllers/ShootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943CDB061ABAD39700D4C186 /* Realm.framework in Frameworks */,
+				943CDAFC1ABAD19300D4C186 /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +105,9 @@
 		943CDA881AB9BBA300D4C186 /* BillsKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */,
+				9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */,
+				943CDB071ABAD53500D4C186 /* RealmClass */,
 				943CDACB1ABAB4C000D4C186 /* Ressources */,
 				943CDAB21AB9DA8C00D4C186 /* ViewControllers */,
 				943CDA8D1AB9BBA300D4C186 /* AppDelegate.h */,
@@ -163,6 +178,8 @@
 		943CDAD71ABABC4D00D4C186 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				943CDB051ABAD39700D4C186 /* Realm.framework */,
+				943CDAFB1ABAD19300D4C186 /* libc++.dylib */,
 			);
 			name = Frameworks;
 			path = BillsKeeper;
@@ -184,6 +201,15 @@
 				943CDAF71ABACECB00D4C186 /* CategoryTableViewController.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		943CDB071ABAD53500D4C186 /* RealmClass */ = {
+			isa = PBXGroup;
+			children = (
+				943CDB081ABAD55B00D4C186 /* Bill.h */,
+				943CDB091ABAD55B00D4C186 /* Bill.m */,
+			);
+			name = RealmClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +315,9 @@
 			files = (
 				943CDAB11AB9DA7900D4C186 /* ListBillsTableViewController.m in Sources */,
 				943CDA8F1AB9BBA300D4C186 /* AppDelegate.m in Sources */,
+				943CDB0A1ABAD55B00D4C186 /* Bill.m in Sources */,
 				943CDA8C1AB9BBA300D4C186 /* main.m in Sources */,
+				9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */,
 				943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */,
 				943CDAF81ABACECB00D4C186 /* CategoryTableViewController.m in Sources */,
 				943CDAF01ABACA9500D4C186 /* DetailBillViewController.m in Sources */,
@@ -418,6 +446,9 @@
 					"$(inherited)",
 					"/Users/rcdsm/GitHub/BillsKeeper/realm-cocoa-0.91.1/osx",
 					"$(PROJECT_DIR)/BillsKeeper",
+					"$(PROJECT_DIR)/BillsKeeper/Frameworks",
+					"/Users/rcdsm/GitHub/BillsKeeper/realm-cocoa-0.91.1/ios",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BillsKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,6 +464,9 @@
 					"$(inherited)",
 					"/Users/rcdsm/GitHub/BillsKeeper/realm-cocoa-0.91.1/osx",
 					"$(PROJECT_DIR)/BillsKeeper",
+					"$(PROJECT_DIR)/BillsKeeper/Frameworks",
+					"/Users/rcdsm/GitHub/BillsKeeper/realm-cocoa-0.91.1/ios",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BillsKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

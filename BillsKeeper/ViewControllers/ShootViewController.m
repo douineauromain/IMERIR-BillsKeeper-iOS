@@ -7,6 +7,7 @@
 //
 
 #import "ShootViewController.h"
+#import "DetailBillViewController.h"
 #import "UIImage+loadScan.h"
 #import "Bill.h"
 
@@ -83,6 +84,18 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"showDetailsBillFromShoot"]) {
+        //objectIDOfSelectedCell
+        DetailBillViewController *DBVC = [segue destinationViewController];
+        
+        RLMResults *allBill = [Bill allObjects];
+        NSNumber *indexOfLastBill = [NSNumber numberWithInt:allBill.count - 1];
+        DBVC.indexOfSelectedCellReceived = indexOfLastBill;
+        DBVC.fromShoot = [NSNumber numberWithBool:YES];
+    }
 }
 
 - (UIImage*)imageWithImage:(UIImage*)image

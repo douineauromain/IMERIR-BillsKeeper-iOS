@@ -11,6 +11,7 @@
 @interface DetailBillViewController : UITableViewController
 
 @property (strong) NSNumber *indexOfSelectedCellReceived;
+@property (strong) NSNumber *fromShoot;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageBillHigh;
 @property (weak, nonatomic) IBOutlet UITextField *textFeildName;

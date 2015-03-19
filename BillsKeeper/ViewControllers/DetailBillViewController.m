@@ -26,6 +26,9 @@
     
     NSLog(@"indexOfSelectedCellReceived : %d", [self.indexOfSelectedCellReceived intValue]);
     
+    if ([self.fromShoot boolValue] != NO) { //from shoot
+        [self.textFeildName becomeFirstResponder];
+    }
     
 }
 

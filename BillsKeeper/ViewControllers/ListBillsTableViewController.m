@@ -145,7 +145,8 @@
         DetailBillViewController *DBVC = [segue destinationViewController];
         NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
         DBVC.indexOfSelectedCellReceived = [NSNumber numberWithInt: selectedIndex];
-        
+        DBVC.fromShoot = [NSNumber numberWithBool:NO]
+        ;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

@@ -15,6 +15,13 @@
 		943CDAA61AB9BBA300D4C186 /* BillsKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAA51AB9BBA300D4C186 /* BillsKeeperTests.m */; };
 		943CDAB11AB9DA7900D4C186 /* ListBillsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAB01AB9DA7900D4C186 /* ListBillsTableViewController.m */; };
 		943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAB51AB9DB4700D4C186 /* BillsViewCell.m */; };
+		943CDAC41ABAB2B300D4C186 /* ShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAC21ABAB2B300D4C186 /* ShootViewController.m */; };
+		943CDAC51ABAB2B300D4C186 /* ShootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943CDAC31ABAB2B300D4C186 /* ShootViewController.xib */; };
+		943CDAC91ABAB41A00D4C186 /* DetailsBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAC71ABAB41A00D4C186 /* DetailsBillViewController.m */; };
+		943CDACA1ABAB41A00D4C186 /* DetailsBillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943CDAC81ABAB41A00D4C186 /* DetailsBillViewController.xib */; };
+		943CDACD1ABAB4D100D4C186 /* bill1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 943CDACC1ABAB4D100D4C186 /* bill1.jpg */; };
+		943CDAD21ABAB61300D4C186 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDAD01ABAB61300D4C186 /* CategoriesViewController.m */; };
+		943CDAD31ABAB61300D4C186 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943CDAD11ABAB61300D4C186 /* CategoriesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,16 @@
 		943CDAB01AB9DA7900D4C186 /* ListBillsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListBillsTableViewController.m; path = ViewControllers/ListBillsTableViewController.m; sourceTree = "<group>"; };
 		943CDAB41AB9DB4700D4C186 /* BillsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillsViewCell.h; path = ViewControllers/BillsViewCell.h; sourceTree = "<group>"; };
 		943CDAB51AB9DB4700D4C186 /* BillsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillsViewCell.m; path = ViewControllers/BillsViewCell.m; sourceTree = "<group>"; };
+		943CDAC11ABAB2B300D4C186 /* ShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShootViewController.h; path = ViewControllers/ShootViewController.h; sourceTree = "<group>"; };
+		943CDAC21ABAB2B300D4C186 /* ShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShootViewController.m; path = ViewControllers/ShootViewController.m; sourceTree = "<group>"; };
+		943CDAC31ABAB2B300D4C186 /* ShootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShootViewController.xib; path = ViewControllers/ShootViewController.xib; sourceTree = "<group>"; };
+		943CDAC61ABAB41A00D4C186 /* DetailsBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailsBillViewController.h; path = ViewControllers/DetailsBillViewController.h; sourceTree = "<group>"; };
+		943CDAC71ABAB41A00D4C186 /* DetailsBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsBillViewController.m; path = ViewControllers/DetailsBillViewController.m; sourceTree = "<group>"; };
+		943CDAC81ABAB41A00D4C186 /* DetailsBillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsBillViewController.xib; path = ViewControllers/DetailsBillViewController.xib; sourceTree = "<group>"; };
+		943CDACC1ABAB4D100D4C186 /* bill1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bill1.jpg; sourceTree = "<group>"; };
+		943CDACF1ABAB61300D4C186 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesViewController.h; path = ViewControllers/CategoriesViewController.h; sourceTree = "<group>"; };
+		943CDAD01ABAB61300D4C186 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesViewController.m; path = ViewControllers/CategoriesViewController.m; sourceTree = "<group>"; };
+		943CDAD11ABAB61300D4C186 /* CategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesViewController.xib; path = ViewControllers/CategoriesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +101,7 @@
 		943CDA881AB9BBA300D4C186 /* BillsKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				943CDACB1ABAB4C000D4C186 /* Ressources */,
 				943CDAB21AB9DA8C00D4C186 /* ViewControllers */,
 				943CDA8D1AB9BBA300D4C186 /* AppDelegate.h */,
 				943CDA8E1AB9BBA300D4C186 /* AppDelegate.m */,
@@ -124,6 +142,9 @@
 		943CDAB21AB9DA8C00D4C186 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				943CDACE1ABAB5F800D4C186 /* Categories */,
+				943CDAC01ABAB29000D4C186 /* ShootBill */,
+				943CDABC1ABAB1D600D4C186 /* DetailsBill */,
 				943CDAB31AB9DA9C00D4C186 /* ListBills */,
 			);
 			name = ViewControllers;
@@ -138,6 +159,44 @@
 				943CDAB51AB9DB4700D4C186 /* BillsViewCell.m */,
 			);
 			name = ListBills;
+			sourceTree = "<group>";
+		};
+		943CDABC1ABAB1D600D4C186 /* DetailsBill */ = {
+			isa = PBXGroup;
+			children = (
+				943CDAC61ABAB41A00D4C186 /* DetailsBillViewController.h */,
+				943CDAC71ABAB41A00D4C186 /* DetailsBillViewController.m */,
+				943CDAC81ABAB41A00D4C186 /* DetailsBillViewController.xib */,
+			);
+			name = DetailsBill;
+			sourceTree = "<group>";
+		};
+		943CDAC01ABAB29000D4C186 /* ShootBill */ = {
+			isa = PBXGroup;
+			children = (
+				943CDAC11ABAB2B300D4C186 /* ShootViewController.h */,
+				943CDAC21ABAB2B300D4C186 /* ShootViewController.m */,
+				943CDAC31ABAB2B300D4C186 /* ShootViewController.xib */,
+			);
+			name = ShootBill;
+			sourceTree = "<group>";
+		};
+		943CDACB1ABAB4C000D4C186 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				943CDACC1ABAB4D100D4C186 /* bill1.jpg */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		943CDACE1ABAB5F800D4C186 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				943CDACF1ABAB61300D4C186 /* CategoriesViewController.h */,
+				943CDAD01ABAB61300D4C186 /* CategoriesViewController.m */,
+				943CDAD11ABAB61300D4C186 /* CategoriesViewController.xib */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +279,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943CDAC51ABAB2B300D4C186 /* ShootViewController.xib in Resources */,
+				943CDACA1ABAB41A00D4C186 /* DetailsBillViewController.xib in Resources */,
+				943CDAD31ABAB61300D4C186 /* CategoriesViewController.xib in Resources */,
+				943CDACD1ABAB4D100D4C186 /* bill1.jpg in Resources */,
 				943CDA951AB9BBA300D4C186 /* Main.storyboard in Resources */,
 				943CDA9A1AB9BBA300D4C186 /* LaunchScreen.xib in Resources */,
 				943CDA971AB9BBA300D4C186 /* Images.xcassets in Resources */,
@@ -240,7 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943CDAC91ABAB41A00D4C186 /* DetailsBillViewController.m in Sources */,
 				943CDAB11AB9DA7900D4C186 /* ListBillsTableViewController.m in Sources */,
+				943CDAC41ABAB2B300D4C186 /* ShootViewController.m in Sources */,
+				943CDAD21ABAB61300D4C186 /* CategoriesViewController.m in Sources */,
 				943CDA8F1AB9BBA300D4C186 /* AppDelegate.m in Sources */,
 				943CDA8C1AB9BBA300D4C186 /* main.m in Sources */,
 				943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */,

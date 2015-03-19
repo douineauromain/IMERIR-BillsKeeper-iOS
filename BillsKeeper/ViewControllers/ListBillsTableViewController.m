@@ -7,6 +7,7 @@
 //
 
 #import "ListBillsTableViewController.h"
+#import "ShootViewController.h"
 
 @interface ListBillsTableViewController ()
 
@@ -97,4 +98,8 @@
 }
 */
 
+- (IBAction)buttonAddBillTouch:(id)sender {
+    ShootViewController *shootVC = [[ShootViewController alloc] init];
+    [self presentViewController:shootVC animated:YES completion:nil];
+}
 @end

@@ -25,8 +25,17 @@
                             <outlet property="delegate" destination="nxK-3H-Gf6" id="g7x-sQ-d3w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bills Keeper" id="LZX-Du-PRN"/>
+                    <navigationItem key="navigationItem" title="Bills Keeper" id="LZX-Du-PRN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ntY-aN-mX6">
+                            <connections>
+                                <action selector="buttonAddBillTouch:" destination="nxK-3H-Gf6" id="p1R-0U-Je4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="buttonAddBill" destination="ntY-aN-mX6" id="xpA-Yg-g3p"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

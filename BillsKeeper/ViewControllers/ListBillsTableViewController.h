@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ListBillsTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonAddBill;
+- (IBAction)buttonAddBillTouch:(id)sender;
 
 @end

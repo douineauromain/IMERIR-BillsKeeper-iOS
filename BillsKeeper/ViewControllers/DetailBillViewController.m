@@ -1,22 +1,22 @@
 //
-//  CategoriesViewController.m
+//  DetailBillViewController.m
 //  BillsKeeper
 //
 //  Created by DOUINEAU Romain on 19/03/2015.
 //  Copyright (c) 2015 DOUINEAU Romain. All rights reserved.
 //
 
-#import "CategoriesViewController.h"
+#import "DetailBillViewController.h"
 
-@interface CategoriesViewController ()
+@interface DetailBillViewController ()
 
 @end
 
-@implementation CategoriesViewController
+@implementation DetailBillViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

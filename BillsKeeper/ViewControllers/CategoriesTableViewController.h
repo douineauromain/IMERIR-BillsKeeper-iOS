@@ -1,5 +1,5 @@
 //
-//  CategoriesViewController.h
+//  CategoriesTableViewController.h
 //  BillsKeeper
 //
 //  Created by DOUINEAU Romain on 19/03/2015.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoriesViewController : UIViewController
+@interface CategoriesTableViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

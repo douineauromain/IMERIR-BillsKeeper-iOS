@@ -1,59 +1,62 @@
 //
-//  ListBillsTableViewController.m
+//  CategoriesTableViewController.m
 //  BillsKeeper
 //
-//  Created by DOUINEAU Romain on 18/03/2015.
+//  Created by DOUINEAU Romain on 19/03/2015.
 //  Copyright (c) 2015 DOUINEAU Romain. All rights reserved.
 //
 
-#import "ListBillsTableViewController.h"
-#import "ShootViewController.h"
 #import "CategoriesTableViewController.h"
+#import "CategoriesTableViewCell.h"
 
-@interface ListBillsTableViewController ()
+@interface CategoriesTableViewController ()
+
+@property NSMutableArray* listCategory;
+@property NSString* cellName;
 
 @end
 
-@implementation ListBillsTableViewController
+@implementation CategoriesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.cellName = @"CategoriesTableViewCell";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView registerNib:[UINib nibWithNibName:self.cellName bundle:nil] forCellReuseIdentifier:self.cellName];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.listCategory = [[NSMutableArray alloc] init];
+    self.listCategory = [NSMutableArray arrayWithObjects:@"Hébergement", @"Restauration", @"Transport", @"Autre", nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return self.listCategory.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    CategoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellName forIndexPath:indexPath];
     
     // Configure the cell...
+    NSLog(@"Row : %ld, Text : %@", (long)indexPath.row, [self.listCategory objectAtIndex:indexPath.row]);
+    
+    cell.labelTitle.text = [self.listCategory objectAtIndex:indexPath.row];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -90,6 +93,22 @@
 */
 
 /*
+#pragma mark - Table view delegate
+
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic may go here, for example:
+    // Create the next view controller.
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    
+    // Pass the selected object to the new view controller.
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+*/
+
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -99,13 +118,4 @@
 }
 */
 
-- (IBAction)buttonAddBillTouch:(id)sender {
-    ShootViewController *shootVC = [[ShootViewController alloc] init];
-    [self.navigationController pushViewController:shootVC animated:YES];
-}
-
-- (IBAction)buttonTestTouch:(id)sender {
-    CategoriesTableViewController* categoryVC = [[CategoriesTableViewController alloc] init];
-    [self.navigationController pushViewController:categoryVC animated:YES];
-}
 @end

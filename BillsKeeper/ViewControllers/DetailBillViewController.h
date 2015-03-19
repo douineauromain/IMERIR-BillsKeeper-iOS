@@ -1,5 +1,5 @@
 //
-//  ShootViewController.h
+//  DetailBillViewController.h
 //  BillsKeeper
 //
 //  Created by DOUINEAU Romain on 19/03/2015.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShootViewController : UIViewController
+@interface DetailBillViewController : UIViewController
 
 @end

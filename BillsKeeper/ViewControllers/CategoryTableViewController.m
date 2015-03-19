@@ -1,20 +1,18 @@
 //
-//  ListBillsTableViewController.m
+//  CategoryTableViewController.m
 //  BillsKeeper
 //
-//  Created by DOUINEAU Romain on 18/03/2015.
+//  Created by DOUINEAU Romain on 19/03/2015.
 //  Copyright (c) 2015 DOUINEAU Romain. All rights reserved.
 //
 
-#import "ListBillsTableViewController.h"
-#import "ShootViewController.h"
-#import "CategoriesTableViewController.h"
+#import "CategoryTableViewController.h"
 
-@interface ListBillsTableViewController ()
+@interface CategoryTableViewController ()
 
 @end
 
-@implementation ListBillsTableViewController
+@implementation CategoryTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -99,13 +97,4 @@
 }
 */
 
-- (IBAction)buttonAddBillTouch:(id)sender {
-    ShootViewController *shootVC = [[ShootViewController alloc] init];
-    [self.navigationController pushViewController:shootVC animated:YES];
-}
-
-- (IBAction)buttonTestTouch:(id)sender {
-    CategoriesTableViewController* categoryVC = [[CategoriesTableViewController alloc] init];
-    [self.navigationController pushViewController:categoryVC animated:YES];
-}
 @end

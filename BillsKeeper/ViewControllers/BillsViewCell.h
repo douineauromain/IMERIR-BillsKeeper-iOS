@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BillsViewCell : UITableViewCell
+@interface BillsViewCell : UITableViewCell <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *category;
+@property (weak, nonatomic) IBOutlet UILabel *dateBill;
+@property (weak, nonatomic) IBOutlet UILabel *amount;
+
 
 @end

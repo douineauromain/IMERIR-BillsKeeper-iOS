@@ -15,11 +15,13 @@
     self = [super init];
     if (self) {
         self.name = @"Facture X";
+        self.amount = 00.00;
         self.dateBill = [NSDate date];
         self.dateShoot = [NSDate date];
         self.imageLink = @"noimg.png";
         self.category = @"Other";
         self.user = @"noUser";
+        self.descriptionBill = @"No description";
         self.objectId = [self randomNumberBetween:99999 maxNumber:999999999];
     }
     return self;

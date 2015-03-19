@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Bills Keeper-->
@@ -18,8 +19,96 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TH7-hv-ZLb" id="qSD-rC-J7Z">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bt7-41-PoE">
+                                            <rect key="frame" x="0.0" y="2" width="90" height="82"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="8M3-v6-3Xb"/>
+                                                <constraint firstAttribute="width" secondItem="Bt7-41-PoE" secondAttribute="height" multiplier="45:41" id="Lbo-V0-jqV"/>
+                                                <constraint firstAttribute="width" constant="90" id="kXK-04-G5R"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Lbo-V0-jqV"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Facture Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-iP-uDR">
+                                            <rect key="frame" x="98" y="10" width="189" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN7-FO-AYq">
+                                            <rect key="frame" x="98" y="33" width="156" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18/09/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnb-gZ-zgs">
+                                            <rect key="frame" x="98" y="58" width="88" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBP-cA-NyU">
+                                            <rect key="frame" x="277" y="32" width="10" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="145.66" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-0b-ga9">
+                                            <rect key="frame" x="216" y="32" width="53" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="53" id="840-7H-rgS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="840-7H-rgS"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hnb-gZ-zgs" firstAttribute="leading" secondItem="Bt7-41-PoE" secondAttribute="trailing" constant="8" id="0o3-l9-QPs"/>
+                                        <constraint firstItem="nBP-cA-NyU" firstAttribute="top" secondItem="qSD-rC-J7Z" secondAttribute="top" constant="32" id="4wB-wJ-xgm"/>
+                                        <constraint firstItem="nBP-cA-NyU" firstAttribute="leading" secondItem="Dph-0b-ga9" secondAttribute="trailing" constant="8" id="7qy-Ry-cUH"/>
+                                        <constraint firstItem="hnb-gZ-zgs" firstAttribute="leading" secondItem="Bt7-41-PoE" secondAttribute="trailing" constant="8" id="CzV-4b-RfO"/>
+                                        <constraint firstItem="dbN-iP-uDR" firstAttribute="leading" secondItem="Bt7-41-PoE" secondAttribute="trailing" constant="8" id="PAr-tL-yF0"/>
+                                        <constraint firstItem="Bt7-41-PoE" firstAttribute="leading" secondItem="qSD-rC-J7Z" secondAttribute="leadingMargin" constant="-8" id="TUx-Os-Zva"/>
+                                        <constraint firstItem="Bt7-41-PoE" firstAttribute="leading" secondItem="qSD-rC-J7Z" secondAttribute="leading" id="YcE-le-vFI"/>
+                                        <constraint firstItem="dbN-iP-uDR" firstAttribute="leading" secondItem="Bt7-41-PoE" secondAttribute="trailing" constant="8" id="Yp2-mm-Xkf"/>
+                                        <constraint firstItem="Bt7-41-PoE" firstAttribute="top" secondItem="qSD-rC-J7Z" secondAttribute="top" id="btx-YM-4CI"/>
+                                        <constraint firstItem="JN7-FO-AYq" firstAttribute="leading" secondItem="Bt7-41-PoE" secondAttribute="trailing" constant="8" id="bwK-D5-tnT"/>
+                                        <constraint firstItem="dbN-iP-uDR" firstAttribute="top" secondItem="qSD-rC-J7Z" secondAttribute="top" constant="9" id="cFI-Ay-ugH"/>
+                                        <constraint firstAttribute="trailing" secondItem="nBP-cA-NyU" secondAttribute="trailing" id="kYo-Tg-JVe"/>
+                                        <constraint firstItem="hnb-gZ-zgs" firstAttribute="top" secondItem="JN7-FO-AYq" secondAttribute="bottom" constant="5" id="mIX-ZA-05A"/>
+                                        <constraint firstItem="Bt7-41-PoE" firstAttribute="top" secondItem="qSD-rC-J7Z" secondAttribute="topMargin" id="nc8-BQ-PQO"/>
+                                        <constraint firstItem="JN7-FO-AYq" firstAttribute="top" secondItem="dbN-iP-uDR" secondAttribute="bottom" constant="2" id="qBD-dd-sCJ"/>
+                                        <constraint firstItem="Dph-0b-ga9" firstAttribute="centerY" secondItem="nBP-cA-NyU" secondAttribute="centerY" id="vFt-pj-Pkz"/>
+                                        <constraint firstAttribute="bottom" secondItem="Bt7-41-PoE" secondAttribute="bottom" id="x6b-dm-cxG"/>
+                                        <constraint firstItem="JN7-FO-AYq" firstAttribute="leading" secondItem="Bt7-41-PoE" secondAttribute="trailing" constant="8" id="yh4-u9-dsz"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="YcE-le-vFI"/>
+                                            <exclude reference="btx-YM-4CI"/>
+                                            <exclude reference="x6b-dm-cxG"/>
+                                            <exclude reference="PAr-tL-yF0"/>
+                                            <exclude reference="bwK-D5-tnT"/>
+                                            <exclude reference="0o3-l9-QPs"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="amount" destination="Dph-0b-ga9" id="GTm-Co-dmr"/>
+                                    <outlet property="category" destination="JN7-FO-AYq" id="c7j-4e-jIR"/>
+                                    <outlet property="dateBill" destination="hnb-gZ-zgs" id="yQ7-aT-XE3"/>
+                                    <outlet property="image" destination="Bt7-41-PoE" id="OuY-Iw-KeM"/>
+                                    <outlet property="name" destination="dbN-iP-uDR" id="vs8-0x-S8O"/>
                                     <segue destination="JlO-lX-wsI" kind="show" identifier="showDetailsBill" id="W84-tX-61B"/>
                                 </connections>
                             </tableViewCell>
@@ -50,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="349.99999999999994"/>
+            <point key="canvasLocation" x="1156" y="345"/>
         </scene>
         <!--Shoot View Controller-->
         <scene sceneID="ZJC-RT-WPK">
@@ -68,8 +157,8 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="301"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-ff-l1J">
-                                <rect key="frame" x="111" y="373" width="99" height="30"/>
-                                <state key="normal" title="Prendre Photo">
+                                <rect key="frame" x="111" y="373" width="84" height="30"/>
+                                <state key="normal" title="Take Picture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -87,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiQ-R5-jX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1955.625" y="-252.46478873239434"/>
+            <point key="canvasLocation" x="1594" y="-237"/>
         </scene>
         <!--Detail Bill View Controller-->
         <scene sceneID="nxh-Q0-6sj">
@@ -101,14 +190,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2I-6U8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2I-6U8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DrY-2I-6U8" secondAttribute="height" multiplier="16:15" id="01r-2P-qXY"/>
+                                    <constraint firstAttribute="height" constant="300" id="ULA-kH-r94"/>
+                                    <constraint firstAttribute="width" secondItem="DrY-2I-6U8" secondAttribute="height" multiplier="16:15" id="atb-VK-NsE"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="01r-2P-qXY"/>
+                                        <exclude reference="atb-VK-NsE"/>
+                                    </mask>
+                                </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkf-BS-zSG">
-                                <rect key="frame" x="26" y="251" width="163" height="27"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkf-BS-zSG">
+                                <rect key="frame" x="26" y="263" width="102" height="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -123,6 +220,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonCategoryTouch:" destination="JlO-lX-wsI" eventType="touchUpInside" id="ycT-VO-USq"/>
                                     <segue destination="WCc-WR-17w" kind="show" id="cvE-19-xdJ"/>
                                 </connections>
                             </button>
@@ -130,21 +228,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DrY-2I-6U8" secondAttribute="trailing" id="EkU-UL-Xae"/>
-                            <constraint firstItem="dkf-BS-zSG" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="-49" id="EoM-jI-HEw"/>
+                            <constraint firstItem="dkf-BS-zSG" firstAttribute="bottom" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="-10" id="EoM-jI-HEw"/>
                             <constraint firstItem="DrY-2I-6U8" firstAttribute="leading" secondItem="eyU-Bo-zOg" secondAttribute="leading" id="ROe-HC-bX8"/>
                             <constraint firstItem="DrY-2I-6U8" firstAttribute="top" secondItem="eyU-Bo-zOg" secondAttribute="top" id="ZXc-Sz-0Qr"/>
+                            <constraint firstItem="DrY-2I-6U8" firstAttribute="bottom" secondItem="dkf-BS-zSG" secondAttribute="bottom" constant="10" id="c0a-18-hMW"/>
                             <constraint firstAttribute="trailing" secondItem="gXJ-o2-0LA" secondAttribute="trailing" constant="30" id="m2I-CC-uZJ"/>
                             <constraint firstItem="dkf-BS-zSG" firstAttribute="leading" secondItem="eyU-Bo-zOg" secondAttribute="leading" constant="26" id="nuD-bm-9cD"/>
                             <constraint firstItem="gXJ-o2-0LA" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="15" id="sAH-jK-zUK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EoM-jI-HEw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="sW3-So-5pm"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbV-uO-Fg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="1019.3661971830985"/>
+            <point key="canvasLocation" x="1156" y="1003"/>
         </scene>
         <!--Categories-->
         <scene sceneID="q0B-Qk-xiv">
@@ -163,6 +267,15 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sds-kR-RuK">
+                                    <rect key="frame" x="189" y="11" width="95" height="30"/>
+                                    <state key="normal" title="New category">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonNewCategory:" destination="WCc-WR-17w" eventType="touchUpInside" id="sZw-N8-dYm"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -189,10 +302,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="4gn-BT-IdW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textFieldNewCategory" destination="xRz-4m-pfc" id="es1-Io-UbN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-lJ-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1955" y="349"/>
+            <point key="canvasLocation" x="1594" y="345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n0S-f6-Tlq">
@@ -211,7 +327,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxX-kb-mhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361.875" y="349.64788732394362"/>
+            <point key="canvasLocation" x="726" y="345"/>
         </scene>
     </scenes>
     <resources>
@@ -220,4 +336,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="cvE-19-xdJ"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -22,6 +22,7 @@
 		943CDB061ABAD39700D4C186 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CDB051ABAD39700D4C186 /* Realm.framework */; };
 		943CDB0A1ABAD55B00D4C186 /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB091ABAD55B00D4C186 /* Bill.m */; };
 		943CDB0E1ABADD9100D4C186 /* UIImage+loadScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB0D1ABADD9100D4C186 /* UIImage+loadScan.m */; };
+		943CDB141ABB008000D4C186 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB131ABB008000D4C186 /* NSDate+Helper.m */; };
 		9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		943CDB091ABAD55B00D4C186 /* Bill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bill.m; path = RealmClass/Bill.m; sourceTree = "<group>"; };
 		943CDB0C1ABADD9100D4C186 /* UIImage+loadScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+loadScan.h"; sourceTree = "<group>"; };
 		943CDB0D1ABADD9100D4C186 /* UIImage+loadScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+loadScan.m"; sourceTree = "<group>"; };
+		943CDB121ABB008000D4C186 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		943CDB131ABB008000D4C186 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShootViewController.h; path = ViewControllers/ShootViewController.h; sourceTree = "<group>"; };
 		9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShootViewController.m; path = ViewControllers/ShootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +221,8 @@
 		943CDB0B1ABADD7F00D4C186 /* specialClass */ = {
 			isa = PBXGroup;
 			children = (
+				943CDB121ABB008000D4C186 /* NSDate+Helper.h */,
+				943CDB131ABB008000D4C186 /* NSDate+Helper.m */,
 				943CDB0C1ABADD9100D4C186 /* UIImage+loadScan.h */,
 				943CDB0D1ABADD9100D4C186 /* UIImage+loadScan.m */,
 			);
@@ -340,6 +345,7 @@
 				943CDA8C1AB9BBA300D4C186 /* main.m in Sources */,
 				9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */,
 				943CDB0E1ABADD9100D4C186 /* UIImage+loadScan.m in Sources */,
+				943CDB141ABB008000D4C186 /* NSDate+Helper.m in Sources */,
 				943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */,
 				943CDAF81ABACECB00D4C186 /* CategoryTableViewController.m in Sources */,
 				943CDAF01ABACA9500D4C186 /* DetailBillViewController.m in Sources */,

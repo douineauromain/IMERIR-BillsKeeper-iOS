@@ -11,11 +11,13 @@
 @interface Bill : RLMObject
 
 @property NSString *name;
+@property float amount;
 @property NSDate *dateBill; //Date sur la facture
 @property NSDate *dateShoot; //Date de création de la photo
 @property NSString *imageLink; //nom ou lien de l'image
 @property NSString *category; //Categorie de la facture
 @property NSString *user; //Pour plus tard
+@property NSString *descriptionBill; //description de la facture
 @property int objectId; //identifiant unique
 
 

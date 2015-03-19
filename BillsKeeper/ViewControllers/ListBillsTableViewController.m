@@ -9,9 +9,12 @@
 #import "ListBillsTableViewController.h"
 #import "CategoryTableViewController.h"
 #import "Bill.h"
+#import "BillsViewCell.h"
+#import "NSDate+Helper.h"
 
-@interface ListBillsTableViewController ()
-
+@interface ListBillsTableViewController (){
+    RLMResults *allBill;
+}
 @end
 
 @implementation ListBillsTableViewController
@@ -42,12 +45,21 @@
 //    [realm commitWriteTransaction];
 
     
-    RLMResults *allBill = [Bill allObjects];
-    Bill *aBill = [allBill objectAtIndex:0];
-    NSLog(aBill.name);
     
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    @try {
+        allBill = [Bill allObjects];
+        
+        Bill *aBill = [allBill objectAtIndex:0];
+        NSLog(aBill.name);
+    }
+    @catch (NSException *exception) {
+        NSLog(@"La base est vide");
+    }
     
-    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,26 +70,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return allBill.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    BillsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"billCell" forIndexPath:indexPath];
     
     // Configure the cell...
+   
+    Bill *theBill = [allBill objectAtIndex:indexPath.row];
+    cell.name.text = theBill.name;
+    cell.category.text = theBill.category;
+    NSDate *theBillDate = theBill.dateBill;
+    cell.dateBill.text = [NSDate stringForDisplayFromDate:theBillDate];
+    cell.amount.text = [NSString stringWithFormat:@"%f",theBill.amount];
+//    UIImage *billIMG = [UIImage alloc
+//    cell.image = [billIMG ]
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

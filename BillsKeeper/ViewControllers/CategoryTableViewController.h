@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailBillViewController.h"
 
 @interface CategoryTableViewController : UITableViewController
+
+
+- (IBAction)buttonNewCategory:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldNewCategory;
 
 @end

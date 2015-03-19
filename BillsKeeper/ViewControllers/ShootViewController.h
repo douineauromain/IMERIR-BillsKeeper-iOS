@@ -11,6 +11,5 @@
 @interface ShootViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *shootImageView;
 - (IBAction)buttonTakePicture:(id)sender;
-- (IBAction)buttonSelectPicture:(id)sender;
 
 @end

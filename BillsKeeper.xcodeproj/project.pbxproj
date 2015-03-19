@@ -21,6 +21,7 @@
 		943CDAFC1ABAD19300D4C186 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CDAFB1ABAD19300D4C186 /* libc++.dylib */; };
 		943CDB061ABAD39700D4C186 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CDB051ABAD39700D4C186 /* Realm.framework */; };
 		943CDB0A1ABAD55B00D4C186 /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB091ABAD55B00D4C186 /* Bill.m */; };
+		943CDB0E1ABADD9100D4C186 /* UIImage+loadScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 943CDB0D1ABADD9100D4C186 /* UIImage+loadScan.m */; };
 		9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		943CDB051ABAD39700D4C186 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		943CDB081ABAD55B00D4C186 /* Bill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bill.h; path = RealmClass/Bill.h; sourceTree = "<group>"; };
 		943CDB091ABAD55B00D4C186 /* Bill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bill.m; path = RealmClass/Bill.m; sourceTree = "<group>"; };
+		943CDB0C1ABADD9100D4C186 /* UIImage+loadScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+loadScan.h"; sourceTree = "<group>"; };
+		943CDB0D1ABADD9100D4C186 /* UIImage+loadScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+loadScan.m"; sourceTree = "<group>"; };
 		9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShootViewController.h; path = ViewControllers/ShootViewController.h; sourceTree = "<group>"; };
 		9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShootViewController.m; path = ViewControllers/ShootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +108,6 @@
 		943CDA881AB9BBA300D4C186 /* BillsKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */,
-				9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */,
 				943CDB071ABAD53500D4C186 /* RealmClass */,
 				943CDACB1ABAB4C000D4C186 /* Ressources */,
 				943CDAB21AB9DA8C00D4C186 /* ViewControllers */,
@@ -149,6 +150,7 @@
 		943CDAB21AB9DA8C00D4C186 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9468EA0E1ABAD80C00D47C87 /* Shoot */,
 				943CDAF21ABACABC00D4C186 /* Categories */,
 				943CDAF11ABACA9E00D4C186 /* DetailBill */,
 				943CDAB31AB9DA9C00D4C186 /* ListBills */,
@@ -170,6 +172,7 @@
 		943CDACB1ABAB4C000D4C186 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				943CDB0B1ABADD7F00D4C186 /* specialClass */,
 				943CDACC1ABAB4D100D4C186 /* bill1.jpg */,
 			);
 			name = Ressources;
@@ -210,6 +213,24 @@
 				943CDB091ABAD55B00D4C186 /* Bill.m */,
 			);
 			name = RealmClass;
+			sourceTree = "<group>";
+		};
+		943CDB0B1ABADD7F00D4C186 /* specialClass */ = {
+			isa = PBXGroup;
+			children = (
+				943CDB0C1ABADD9100D4C186 /* UIImage+loadScan.h */,
+				943CDB0D1ABADD9100D4C186 /* UIImage+loadScan.m */,
+			);
+			name = specialClass;
+			sourceTree = "<group>";
+		};
+		9468EA0E1ABAD80C00D47C87 /* Shoot */ = {
+			isa = PBXGroup;
+			children = (
+				9468EA0B1ABAD65B00D47C87 /* ShootViewController.h */,
+				9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */,
+			);
+			name = Shoot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +339,7 @@
 				943CDB0A1ABAD55B00D4C186 /* Bill.m in Sources */,
 				943CDA8C1AB9BBA300D4C186 /* main.m in Sources */,
 				9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */,
+				943CDB0E1ABADD9100D4C186 /* UIImage+loadScan.m in Sources */,
 				943CDAB61AB9DB4700D4C186 /* BillsViewCell.m in Sources */,
 				943CDAF81ABACECB00D4C186 /* CategoryTableViewController.m in Sources */,
 				943CDAF01ABACA9500D4C186 /* DetailBillViewController.m in Sources */,
@@ -451,6 +473,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BillsKeeper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -469,6 +492,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BillsKeeper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

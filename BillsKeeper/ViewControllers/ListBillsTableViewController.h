@@ -10,7 +10,5 @@
 
 @interface ListBillsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonAddBill;
-- (IBAction)buttonAddBillTouch:(id)sender;
-- (IBAction)buttonTestTouch:(id)sender;
 
 @end

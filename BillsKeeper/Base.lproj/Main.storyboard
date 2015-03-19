@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="wXh-7Q-b7t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wXh-7Q-b7t">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Bills Keeper-->
@@ -19,7 +20,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="JlO-lX-wsI" kind="push" identifier="showDetailsBill" id="W84-tX-61B"/>
+                                    <segue destination="JlO-lX-wsI" kind="show" identifier="showDetailsBill" id="W84-tX-61B"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -32,13 +33,13 @@
                         <barButtonItem key="leftBarButtonItem" title="Test" id="mVF-2X-MFn">
                             <connections>
                                 <action selector="buttonTestTouch:" destination="nxK-3H-Gf6" id="xMD-HM-mDe"/>
-                                <segue destination="WCc-WR-17w" kind="push" id="Whf-ua-IPb"/>
+                                <segue destination="WCc-WR-17w" kind="show" id="Whf-ua-IPb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ntY-aN-mX6">
                             <connections>
                                 <action selector="buttonAddBillTouch:" destination="nxK-3H-Gf6" id="p1R-0U-Je4"/>
-                                <segue destination="Rvn-9h-PEa" kind="push" identifier="showShoot" id="dhp-iP-Z9b"/>
+                                <segue destination="Rvn-9h-PEa" kind="show" identifier="showShoot" id="dhp-iP-Z9b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,33 +50,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616.5333333333333" y="331.33333333333331"/>
+            <point key="canvasLocation" x="1156" y="349.99999999999994"/>
         </scene>
         <!--Shoot View Controller-->
         <scene sceneID="ZJC-RT-WPK">
             <objects>
                 <viewController id="Rvn-9h-PEa" customClass="ShootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rcw-OP-My0"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZEy-9f-TF4"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aw1-wp-tXD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="klb-Og-cal">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="klb-Og-cal">
                                 <rect key="frame" x="0.0" y="64" width="320" height="301"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1xN-h9-Iak">
-                                <rect key="frame" x="137" y="406" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonSelectPicture:" destination="Rvn-9h-PEa" eventType="touchUpInside" id="QmN-NS-8np"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pa8-ff-l1J">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-ff-l1J">
                                 <rect key="frame" x="111" y="373" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Prendre Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -94,39 +87,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiQ-R5-jX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="-350"/>
+            <point key="canvasLocation" x="1955.625" y="-252.46478873239434"/>
         </scene>
         <!--Detail Bill View Controller-->
         <scene sceneID="nxh-Q0-6sj">
             <objects>
                 <viewController id="JlO-lX-wsI" customClass="DetailBillViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YY0-lP-2lS"/>
+                        <viewControllerLayoutGuide type="bottom" id="fW0-Dp-yYX"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eyU-Bo-zOg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill1.jpg" id="DrY-2I-6U8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2I-6U8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DrY-2I-6U8" secondAttribute="height" multiplier="16:15" id="01r-2P-qXY"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" id="dkf-BS-zSG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkf-BS-zSG">
                                 <rect key="frame" x="26" y="251" width="163" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gXJ-o2-0LA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-o2-0LA">
                                 <rect key="frame" x="166" y="315" width="124" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="vAH-oh-E81"/>
+                                    <constraint firstAttribute="width" secondItem="gXJ-o2-0LA" secondAttribute="height" multiplier="62:15" id="xch-fl-4Ic"/>
+                                </constraints>
                                 <state key="normal" title="Other">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WCc-WR-17w" kind="push" id="cvE-19-xdJ"/>
+                                    <segue destination="WCc-WR-17w" kind="show" id="cvE-19-xdJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DrY-2I-6U8" secondAttribute="trailing" id="EkU-UL-Xae"/>
+                            <constraint firstItem="dkf-BS-zSG" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="-49" id="EoM-jI-HEw"/>
+                            <constraint firstItem="DrY-2I-6U8" firstAttribute="leading" secondItem="eyU-Bo-zOg" secondAttribute="leading" id="ROe-HC-bX8"/>
+                            <constraint firstItem="DrY-2I-6U8" firstAttribute="top" secondItem="eyU-Bo-zOg" secondAttribute="top" id="ZXc-Sz-0Qr"/>
+                            <constraint firstAttribute="trailing" secondItem="gXJ-o2-0LA" secondAttribute="trailing" constant="30" id="m2I-CC-uZJ"/>
+                            <constraint firstItem="dkf-BS-zSG" firstAttribute="leading" secondItem="eyU-Bo-zOg" secondAttribute="leading" constant="26" id="nuD-bm-9cD"/>
+                            <constraint firstItem="gXJ-o2-0LA" firstAttribute="top" secondItem="DrY-2I-6U8" secondAttribute="bottom" constant="15" id="sAH-jK-zUK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sW3-So-5pm"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -134,9 +144,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbV-uO-Fg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866.66666666666663" y="331.33333333333331"/>
+            <point key="canvasLocation" x="1155" y="1019.3661971830985"/>
         </scene>
-        <!--Category Table View Controller-->
+        <!--Categories-->
         <scene sceneID="q0B-Qk-xiv">
             <objects>
                 <tableViewController id="WCc-WR-17w" customClass="CategoryTableViewController" sceneMemberID="viewController">
@@ -144,6 +154,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Yqq-Sr-maa">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-4m-pfc">
+                                    <rect key="frame" x="33" y="11" width="97" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="4bM-8C-dxb" style="IBUITableViewCellStyleDefault" id="v2Y-cd-LGE">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -153,7 +175,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4bM-8C-dxb">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -165,12 +187,12 @@
                             <outlet property="delegate" destination="WCc-WR-17w" id="IcC-G4-D97"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4gn-BT-IdW"/>
+                    <navigationItem key="navigationItem" title="Categories" id="4gn-BT-IdW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-lJ-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104.5333333333333" y="267.90666666666664"/>
+            <point key="canvasLocation" x="1955" y="349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n0S-f6-Tlq">
@@ -189,17 +211,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxX-kb-mhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="331.33333333333331"/>
+            <point key="canvasLocation" x="361.875" y="349.64788732394362"/>
         </scene>
     </scenes>
     <resources>
         <image name="bill1.jpg" width="535" height="712"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="cvE-19-xdJ"/>
     </inferredMetricsTieBreakers>

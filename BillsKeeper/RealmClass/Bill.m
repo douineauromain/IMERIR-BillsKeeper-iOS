@@ -10,6 +10,26 @@
 
 @implementation Bill
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.name = @"Facture X";
+        self.dateBill = [NSDate date];
+        self.dateShoot = [NSDate date];
+        self.imageLink = @"noimg.png";
+        self.category = @"Other";
+        self.user = @"noUser";
+        self.objectId = [self randomNumberBetween:99999 maxNumber:999999999];
+    }
+    return self;
+}
+
+- (int)randomNumberBetween:(int)min maxNumber:(int)max
+{
+    return (int)min + arc4random_uniform(max - min + 1);
+}
+
 // Specify default values for properties
 
 //+ (NSDictionary *)defaultPropertyValues

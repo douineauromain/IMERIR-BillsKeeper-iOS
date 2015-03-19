@@ -8,6 +8,7 @@
 
 #import "ListBillsTableViewController.h"
 #import "CategoryTableViewController.h"
+#import "Bill.h"
 
 @interface ListBillsTableViewController ()
 
@@ -23,7 +24,30 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+//    //REALM CERATION OBJETS TEST
+//    // Create object
+//    Bill *billTest = [[Bill alloc] init];
+//    billTest.name = @"Facture test";
+//    billTest.imageLink = @"test.png";
+//    
+//    // Get the default Realm
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    // You only need to do this once (per thread)
+//    
+//    // Add to Realm with transaction
+//    [realm beginWriteTransaction];
+//    [realm addObject:billTest];
+//    [realm commitWriteTransaction];
 
+    
+    RLMResults *allBill = [Bill allObjects];
+    Bill *aBill = [allBill objectAtIndex:0];
+    NSLog(aBill.name);
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,11 +123,6 @@
 }
 */
 
-- (IBAction)buttonAddBillTouch:(id)sender {
-}
 
-- (IBAction)buttonTestTouch:(id)sender {
-    /*CategoryTableViewController* categoryVC = [[CategoryTableViewController alloc] init];
-    [self.navigationController pushViewController:categoryVC animated:YES];*/
-}
+
 @end

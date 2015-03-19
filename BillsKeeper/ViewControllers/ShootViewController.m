@@ -21,7 +21,7 @@
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Device has no camera"
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No camera"
                                                              delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         
         [myAlertView show];
@@ -37,7 +37,7 @@
 - (IBAction)buttonTakePicture:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = NO;
+    picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:NULL];
@@ -46,7 +46,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    
     self.shootImageView.image = chosenImage;
+    UIImage *lowImage = [[UIImage alloc] init];
+    lowImage = [self imageWithImage:chosenImage scaledToSize:CGSizeMake(64, 64)];
     
    
     //REALM CERATION OBJETS FACTURE
@@ -65,7 +68,7 @@
     
     NSLog(@"Le bill a été sav");
     
-    [chosenImage saveScan:theBill.imageLink];
+    [lowImage saveScan:theBill.imageLink];
     
     NSLog(@"L'image a été sav");
     
@@ -78,4 +81,14 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
 @end

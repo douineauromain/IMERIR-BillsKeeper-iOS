@@ -11,6 +11,7 @@
 #import "Bill.h"
 #import "BillsViewCell.h"
 #import "NSDate+Helper.h"
+#import "UIImage+loadScan.h"
 
 @interface ListBillsTableViewController (){
     RLMResults *allBill;
@@ -91,8 +92,9 @@
     NSDate *theBillDate = theBill.dateBill;
     cell.dateBill.text = [NSDate stringForDisplayFromDate:theBillDate];
     cell.amount.text = [NSString stringWithFormat:@"%f",theBill.amount];
-//    UIImage *billIMG = [UIImage alloc
-//    cell.image = [billIMG ]
+    
+    UIImage *theBillImage = [UIImage imageWithScan:theBill.imageLink];
+    cell.image.image = theBillImage;
     
     return cell;
 }

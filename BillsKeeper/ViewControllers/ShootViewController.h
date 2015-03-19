@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ShootViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *shootImageView;
 - (IBAction)buttonTakePicture:(id)sender;
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
 
 @end

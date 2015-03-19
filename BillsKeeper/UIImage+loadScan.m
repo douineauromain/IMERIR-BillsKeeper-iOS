@@ -21,11 +21,12 @@
         NSString* path = [documentsDirectory stringByAppendingPathComponent:
                           [NSString stringWithString:name] ];
         NSData* data = UIImagePNGRepresentation(self);
+        NSLog(@"saving %@", path);
         [data writeToFile:path atomically:YES];
     }
 }
 
-- (UIImage *)loadScan:(NSString*)name theImage:(UIImage*)theImg{
++ (UIImage *)imageWithScan:(NSString*)name {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                          NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -35,8 +36,7 @@
     //NSData *imgData = [NSData dataWithContentsOfFile:path];
     //UIImage *image = [[UIImage alloc] initWithData:imgData];
     
-    [theImg initWithContentsOfFile:path];
-    return theImg;
+    return [UIImage imageWithContentsOfFile:path];
 }
 
 

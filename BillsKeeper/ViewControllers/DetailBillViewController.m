@@ -16,15 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.buttonCategory setTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"tempCategory"] forState:UIControlStateNormal];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tempCategory"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonCategoryTouch:(id)sender {
-    
-}
 @end

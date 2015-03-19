@@ -12,6 +12,5 @@
 
 - (void)saveScan:(NSString*)name;
 
-- (UIImage *)loadScan:(NSString*)name theImage:(UIImage*)theImg;
-
++ (UIImage *)imageWithScan:(NSString*)name;
 @end

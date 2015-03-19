@@ -10,7 +10,6 @@
 
 @interface CategoryTableViewController ()
 @property NSMutableArray* listCategory;
-@property NSUserDefaults* userDefault;
 @end
 
 @implementation CategoryTableViewController
@@ -18,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.listCategory = [[NSMutableArray alloc] init];
-    self.userDefault = [NSUserDefaults standardUserDefaults];
     self.listCategory = [NSMutableArray arrayWithObjects:@"Hébergement", @"Restauration", @"Transport", @"Autres", nil];
-    
-    //[self.userDefault setObject:self.listCategory forKey:@"Categories"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -36,23 +32,13 @@
     return cell;
 }
 
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSIndexPath* indexPath = self.tableView.indexPathForSelectedRow;
-    
-    DetailBillViewController* VC = segue
-}*/
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //DetailBillViewController* dest = segue.destinationViewController;
-    
-    /*if ([segue.identifier isEqualToString:@"gameDetail"]) {
-        NSUInteger selectedRow = self.tableView.indexPathForSelectedRow.row;
-        dest.selectedGame = [[GamesManager sharedGamesManager] gameAtIndex:selectedRow];
-    }*/
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[NSUserDefaults standardUserDefaults] setValue:[self.listCategory objectAtIndex:indexPath.row] forKey:@"tempCategory"];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)buttonNewCategory:(id)sender {
-    if ([self.textFieldNewCategory.text  isEqual: @""]) {
+    if ([self.textFieldNewCategory.text isEqual:@""]) {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Category name unfilled"
                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
@@ -60,7 +46,12 @@
     }else{
         [self.listCategory addObject:self.textFieldNewCategory.text];
         [self.tableView reloadData];
+        self.textFieldNewCategory.text = @"";
     }
+}
+
+- (IBAction)buttonBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

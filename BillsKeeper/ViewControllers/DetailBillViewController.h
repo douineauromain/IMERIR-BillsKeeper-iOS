@@ -10,6 +10,6 @@
 
 @interface DetailBillViewController : UIViewController
 
-- (IBAction)buttonCategoryTouch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCategory;
+
 @end

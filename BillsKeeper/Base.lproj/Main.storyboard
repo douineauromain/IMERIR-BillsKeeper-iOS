@@ -20,10 +20,10 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TH7-hv-ZLb" id="qSD-rC-J7Z">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bt7-41-PoE">
-                                            <rect key="frame" x="0.0" y="2" width="90" height="82"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bt7-41-PoE">
+                                            <rect key="frame" x="0.0" y="8" width="90" height="73"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="80" id="8M3-v6-3Xb"/>
+                                                <constraint firstAttribute="height" constant="73" id="8M3-v6-3Xb"/>
                                                 <constraint firstAttribute="width" secondItem="Bt7-41-PoE" secondAttribute="height" multiplier="45:41" id="Lbo-V0-jqV"/>
                                                 <constraint firstAttribute="width" constant="90" id="kXK-04-G5R"/>
                                             </constraints>
@@ -190,7 +190,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2I-6U8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2I-6U8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DrY-2I-6U8" secondAttribute="height" multiplier="16:15" id="01r-2P-qXY"/>
@@ -220,8 +220,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonCategoryTouch:" destination="JlO-lX-wsI" eventType="touchUpInside" id="ycT-VO-USq"/>
-                                    <segue destination="WCc-WR-17w" kind="show" id="cvE-19-xdJ"/>
+                                    <segue destination="WCc-WR-17w" kind="presentation" id="cvE-19-xdJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -245,6 +244,9 @@
                     <navigationItem key="navigationItem" id="sW3-So-5pm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="buttonCategory" destination="gXJ-o2-0LA" id="WOF-LT-WS2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbV-uO-Fg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,25 +261,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Yqq-Sr-maa">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-4m-pfc">
-                                    <rect key="frame" x="33" y="11" width="97" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sds-kR-RuK">
-                                    <rect key="frame" x="189" y="11" width="95" height="30"/>
-                                    <state key="normal" title="New category">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sds-kR-RuK">
+                                    <rect key="frame" x="205" y="14" width="95" height="30"/>
+                                    <state key="normal" title="Add">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
                                         <action selector="buttonNewCategory:" destination="WCc-WR-17w" eventType="touchUpInside" id="sZw-N8-dYm"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-ac-xeS">
+                                    <rect key="frame" x="14" y="11" width="30" height="30"/>
+                                    <state key="normal" title="&lt;">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonBack:" destination="WCc-WR-17w" eventType="touchUpInside" id="bza-gT-Fro"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-4m-pfc">
+                                    <rect key="frame" x="105" y="11" width="110" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="xRz-4m-pfc" secondAttribute="centerX" id="02Y-pC-3Yn"/>
+                                <constraint firstItem="IC5-ac-xeS" firstAttribute="top" secondItem="Yqq-Sr-maa" secondAttribute="top" constant="30" id="5wv-L0-i0n"/>
+                                <constraint firstItem="Sds-kR-RuK" firstAttribute="top" secondItem="Yqq-Sr-maa" secondAttribute="top" constant="30" id="LtZ-d1-xxI"/>
+                                <constraint firstAttribute="trailing" secondItem="Sds-kR-RuK" secondAttribute="trailing" constant="10" id="Rzf-S9-6gb"/>
+                                <constraint firstItem="xRz-4m-pfc" firstAttribute="top" secondItem="Yqq-Sr-maa" secondAttribute="top" constant="30" id="p70-4e-i3o"/>
+                                <constraint firstItem="Sds-kR-RuK" firstAttribute="leading" secondItem="xRz-4m-pfc" secondAttribute="trailing" constant="20" id="seX-aq-CB2"/>
+                                <constraint firstItem="IC5-ac-xeS" firstAttribute="leading" secondItem="Yqq-Sr-maa" secondAttribute="leading" constant="10" id="w2m-PF-W7m"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="4bM-8C-dxb" style="IBUITableViewCellStyleDefault" id="v2Y-cd-LGE">

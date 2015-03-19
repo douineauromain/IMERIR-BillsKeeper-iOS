@@ -78,6 +78,7 @@
 
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    [self performSegueWithIdentifier:@"showDetailsBillFromShoot" sender:self];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

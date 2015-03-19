@@ -172,11 +172,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="shootImageView" destination="klb-Og-cal" id="cff-SG-bSF"/>
+                        <segue destination="CC5-5r-41Q" kind="show" identifier="showDetailsBillFromShoot" id="rE6-5e-zip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiQ-R5-jX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="-237"/>
+            <point key="canvasLocation" x="1624" y="295"/>
         </scene>
         <!--Detail Bill View Controller-->
         <scene sceneID="44E-bE-zu6">
@@ -355,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tr-bm-Xsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="995"/>
+            <point key="canvasLocation" x="1182" y="-309"/>
         </scene>
         <!--Categories-->
         <scene sceneID="q0B-Qk-xiv">
@@ -433,7 +434,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-lJ-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="345"/>
+            <point key="canvasLocation" x="1614" y="-299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n0S-f6-Tlq">
@@ -461,6 +462,7 @@
         <image name="bill1.jpg" width="535" height="712"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="rE6-5e-zip"/>
         <segue reference="gqe-Jk-efM"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>

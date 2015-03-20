@@ -20,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //configuration navigation bar :
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No camera"

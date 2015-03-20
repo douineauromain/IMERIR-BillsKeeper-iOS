@@ -41,6 +41,9 @@
                                     <state key="normal" title="Search">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buttonSearch:" destination="nxK-3H-Gf6" eventType="touchUpInside" id="ppI-Se-Ajp"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,6 +205,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="buttonAddBill" destination="ntY-aN-mX6" id="xpA-Yg-g3p"/>
+                        <outlet property="textFieldSearch" destination="bXw-Kt-GEK" id="Di9-nV-5iq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>

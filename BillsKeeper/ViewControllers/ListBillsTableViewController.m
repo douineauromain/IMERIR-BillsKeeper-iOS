@@ -2,7 +2,7 @@
 //  ListBillsTableViewController.m
 //  BillsKeeper
 //
-//  Created by DOUINEAU Romain on 18/03/2015.
+//  Created by  Romain on 18/03/2015.
 //  Copyright (c) 2015 DOUINEAU Romain. All rights reserved.
 //
 
@@ -137,10 +137,31 @@
     self.sendCSVMail = [[MFMailComposeViewController alloc]init];
     self.sendCSVMail.mailComposeDelegate = self;
     [self.sendCSVMail setSubject:@"Test CSV"];
-    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:(@"%@", documentsDirectory) fileName:@"BillsCSV.txt"];
+    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:documentsDirectory fileName:@"BillsCSV.txt"];
     
     [self.sendCSVMail setMessageBody:@"CSV AUTO" isHTML:NO];
      [self presentModalViewController:self.sendCSVMail animated:YES];
+}
+
+- (IBAction)buttonSearch:(id)sender {
+    if ([self.textFieldSearch.text isEqualToString:@""]) {
+        NSLog(@"Vide");
+    }else{
+        /*
+        NSMutableArray* arrayPleinCell;
+        
+        for (int i = 0; i <= allBill.count; i++) {
+            [arrayPleinCell insertObject:[[allBill objectAtIndex:i] name] atIndex:i];
+        }
+        
+        */
+        
+        RLMResults* resultat;
+        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"name CONTAINS[c] '%@'", self.textFieldSearch.text]];
+        
+        allBill = [allBill objectsWithPredicate:pred];
+        [self.tableView reloadData];
+    }
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller

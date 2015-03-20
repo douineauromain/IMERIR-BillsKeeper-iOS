@@ -119,12 +119,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bills Keeper" id="LZX-Du-PRN">
-                        <barButtonItem key="leftBarButtonItem" title="Test" id="mVF-2X-MFn">
-                            <connections>
-                                <action selector="buttonTestTouch:" destination="nxK-3H-Gf6" id="xMD-HM-mDe"/>
-                                <segue destination="WCc-WR-17w" kind="show" id="Whf-ua-IPb"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="C6d-LT-36p"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ntY-aN-mX6">
                             <connections>
                                 <action selector="buttonAddBillTouch:" destination="nxK-3H-Gf6" id="p1R-0U-Je4"/>
@@ -332,7 +327,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="205" id="OwT-W2-fCI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lastCell" rowHeight="205" id="OwT-W2-fCI">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OwT-W2-fCI" id="I6S-bh-NaZ">
@@ -382,15 +377,6 @@
                                         <action selector="buttonNewCategory:" destination="WCc-WR-17w" eventType="touchUpInside" id="sZw-N8-dYm"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-ac-xeS">
-                                    <rect key="frame" x="14" y="11" width="30" height="30"/>
-                                    <state key="normal" title="&lt;">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="buttonBack:" destination="WCc-WR-17w" eventType="touchUpInside" id="bza-gT-Fro"/>
-                                    </connections>
-                                </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-4m-pfc">
                                     <rect key="frame" x="105" y="11" width="110" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -400,12 +386,10 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="centerX" secondItem="xRz-4m-pfc" secondAttribute="centerX" id="02Y-pC-3Yn"/>
-                                <constraint firstItem="IC5-ac-xeS" firstAttribute="top" secondItem="Yqq-Sr-maa" secondAttribute="top" constant="30" id="5wv-L0-i0n"/>
                                 <constraint firstItem="Sds-kR-RuK" firstAttribute="top" secondItem="Yqq-Sr-maa" secondAttribute="top" constant="30" id="LtZ-d1-xxI"/>
                                 <constraint firstAttribute="trailing" secondItem="Sds-kR-RuK" secondAttribute="trailing" constant="10" id="Rzf-S9-6gb"/>
                                 <constraint firstItem="xRz-4m-pfc" firstAttribute="top" secondItem="Yqq-Sr-maa" secondAttribute="top" constant="30" id="p70-4e-i3o"/>
                                 <constraint firstItem="Sds-kR-RuK" firstAttribute="leading" secondItem="xRz-4m-pfc" secondAttribute="trailing" constant="20" id="seX-aq-CB2"/>
-                                <constraint firstItem="IC5-ac-xeS" firstAttribute="leading" secondItem="Yqq-Sr-maa" secondAttribute="leading" constant="10" id="w2m-PF-W7m"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -465,8 +449,7 @@
         <image name="bill1.jpg" width="535" height="712"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rE6-5e-zip"/>
-        <segue reference="gqe-Jk-efM"/>
+        <segue reference="1VM-eO-1xZ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

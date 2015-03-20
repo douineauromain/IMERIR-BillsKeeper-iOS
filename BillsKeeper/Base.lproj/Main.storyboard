@@ -18,8 +18,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search a bill" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-Kt-GEK">
-                                    <rect key="frame" x="15" y="5" width="222" height="33"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search a bill" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-Kt-GEK">
+                                    <rect key="frame" x="10" y="8" width="300" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="M9O-nw-JGn"/>
                                         <constraint firstAttribute="width" constant="50" id="QQG-4T-q7n"/>
@@ -27,7 +28,7 @@
                                         <constraint firstAttribute="height" constant="33" id="bZS-Wy-wd9"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="M9O-nw-JGn"/>
@@ -35,53 +36,32 @@
                                             <exclude reference="bJ1-uQ-zyb"/>
                                         </mask>
                                     </variation>
-                                </textField>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KU-JA-lFQ">
-                                    <rect key="frame" x="257" y="6" width="48" height="30"/>
-                                    <state key="normal" title="Search">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
                                     <connections>
-                                        <action selector="buttonSearch:" destination="nxK-3H-Gf6" eventType="touchUpInside" id="ppI-Se-Ajp"/>
+                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="touchDown" id="42m-Rv-qFO"/>
+                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="editingDidEnd" id="irr-2l-1Zo"/>
+                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="editingChanged" id="spq-rO-Liu"/>
+                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="valueChanged" id="zUe-uj-q6k"/>
                                     </connections>
-                                </button>
+                                </textField>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.99681810329999998" blue="0.27328260240000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="baseline" secondItem="0KU-JA-lFQ" secondAttribute="baseline" id="00G-CP-9Ci"/>
-                                <constraint firstItem="0KU-JA-lFQ" firstAttribute="leading" secondItem="bXw-Kt-GEK" secondAttribute="trailing" constant="20" id="1xe-sp-dSJ"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="centerY" secondItem="0KU-JA-lFQ" secondAttribute="centerY" constant="2" id="EWx-XT-flW"/>
-                                <constraint firstItem="0KU-JA-lFQ" firstAttribute="leading" secondItem="bXw-Kt-GEK" secondAttribute="trailing" constant="20" id="Tbg-Gf-ENS"/>
-                                <constraint firstAttribute="centerY" secondItem="0KU-JA-lFQ" secondAttribute="centerY" constant="8" id="U1v-6I-122"/>
-                                <constraint firstAttribute="trailing" secondItem="0KU-JA-lFQ" secondAttribute="trailing" constant="15" id="U9D-Rb-JSf"/>
                                 <constraint firstItem="bXw-Kt-GEK" firstAttribute="bottom" secondItem="Ytw-Si-1Jn" secondAttribute="bottomMargin" id="YM9-D2-5FX"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="leading" secondItem="Ytw-Si-1Jn" secondAttribute="leading" constant="15" id="ZXO-yP-1Dv"/>
+                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="leading" secondItem="Ytw-Si-1Jn" secondAttribute="leading" constant="10" id="ZXO-yP-1Dv"/>
                                 <constraint firstAttribute="centerY" secondItem="bXw-Kt-GEK" secondAttribute="centerY" constant="1" id="cLx-uY-MxK"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="centerY" secondItem="0KU-JA-lFQ" secondAttribute="centerY" constant="-2" id="f41-8U-XvF"/>
+                                <constraint firstAttribute="trailing" secondItem="bXw-Kt-GEK" secondAttribute="trailing" constant="10" id="htv-l0-0hG"/>
                                 <constraint firstItem="bXw-Kt-GEK" firstAttribute="top" secondItem="Ytw-Si-1Jn" secondAttribute="top" constant="8" id="khh-rG-CS9"/>
-                                <constraint firstAttribute="trailing" secondItem="0KU-JA-lFQ" secondAttribute="trailing" constant="8" id="l6d-Qb-nLe"/>
                                 <constraint firstItem="bXw-Kt-GEK" firstAttribute="leading" secondItem="Ytw-Si-1Jn" secondAttribute="leading" constant="17" id="msu-4y-97S"/>
                                 <constraint firstAttribute="centerY" secondItem="bXw-Kt-GEK" secondAttribute="centerY" constant="1" id="unE-ls-INc"/>
                                 <constraint firstAttribute="centerY" secondItem="bXw-Kt-GEK" secondAttribute="centerY" constant="1" id="vIY-MX-WgY"/>
-                                <constraint firstItem="0KU-JA-lFQ" firstAttribute="leading" secondItem="bXw-Kt-GEK" secondAttribute="trailing" constant="8" symbolic="YES" id="vwf-jv-gHR"/>
-                                <constraint firstItem="0KU-JA-lFQ" firstAttribute="leading" secondItem="bXw-Kt-GEK" secondAttribute="trailing" constant="238" id="ymm-Wo-fZY"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="centerY" secondItem="0KU-JA-lFQ" secondAttribute="centerY" constant="-2" id="yuK-gz-Mo6"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="00G-CP-9Ci"/>
                                     <exclude reference="YM9-D2-5FX"/>
                                     <exclude reference="cLx-uY-MxK"/>
-                                    <exclude reference="f41-8U-XvF"/>
                                     <exclude reference="msu-4y-97S"/>
                                     <exclude reference="unE-ls-INc"/>
                                     <exclude reference="vIY-MX-WgY"/>
-                                    <exclude reference="yuK-gz-Mo6"/>
-                                    <exclude reference="1xe-sp-dSJ"/>
-                                    <exclude reference="U1v-6I-122"/>
-                                    <exclude reference="l6d-Qb-nLe"/>
-                                    <exclude reference="vwf-jv-gHR"/>
-                                    <exclude reference="ymm-Wo-fZY"/>
                                 </mask>
                             </variation>
                         </view>
@@ -246,7 +226,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="hfr-A8-HQO" secondAttribute="bottom" id="0vS-zh-qry"/>
                                     <constraint firstItem="hfr-A8-HQO" firstAttribute="leading" secondItem="kFE-01-pUC" secondAttribute="leading" id="EVZ-Ez-lgd"/>
@@ -392,6 +372,7 @@
                                                     <exclude reference="oGm-ry-BLx"/>
                                                     <exclude reference="rfQ-bJ-6jp"/>
                                                     <exclude reference="uro-BD-jow"/>
+                                                    <exclude reference="4e1-i8-d1f"/>
                                                     <exclude reference="3Ll-6P-I7r"/>
                                                     <exclude reference="8DI-rm-oN7"/>
                                                     <exclude reference="LBT-1i-dL8"/>
@@ -399,7 +380,6 @@
                                                     <exclude reference="nVy-QS-8cR"/>
                                                     <exclude reference="u8F-wx-y9X"/>
                                                     <exclude reference="wAc-Zp-51l"/>
-                                                    <exclude reference="4e1-i8-d1f"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

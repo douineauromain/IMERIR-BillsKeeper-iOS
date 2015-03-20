@@ -70,6 +70,11 @@
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    //gesture recognizer for TF
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(hideKeyBoard)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,7 +132,7 @@
     
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];
-    NSString* filePath = [documentsDirectory stringByAppendingPathComponent:@"BillsCSV.txt"];
+    NSString* filePath = [documentsDirectory stringByAppendingPathComponent:@"Bills.csv"];
     
     [csvText writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
@@ -136,32 +141,19 @@
     
     self.sendCSVMail = [[MFMailComposeViewController alloc]init];
     self.sendCSVMail.mailComposeDelegate = self;
-    [self.sendCSVMail setSubject:@"Test CSV"];
-    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:documentsDirectory fileName:@"BillsCSV.txt"];
+    [self.sendCSVMail setSubject:@"Bills CSV"];
+    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:documentsDirectory fileName:@"Bills.csv"];
     
     [self.sendCSVMail setMessageBody:@"CSV AUTO" isHTML:NO];
      [self presentModalViewController:self.sendCSVMail animated:YES];
 }
 
-- (IBAction)buttonSearch:(id)sender {
-    if ([self.textFieldSearch.text isEqualToString:@""]) {
-        NSLog(@"Vide");
-    }else{
-        /*
-        NSMutableArray* arrayPleinCell;
-        
-        for (int i = 0; i <= allBill.count; i++) {
-            [arrayPleinCell insertObject:[[allBill objectAtIndex:i] name] atIndex:i];
-        }
-        
-        */
-        
-        RLMResults* resultat;
-        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"name CONTAINS[c] '%@'", self.textFieldSearch.text]];
-        
-        allBill = [allBill objectsWithPredicate:pred];
+- (void)buttonDelete:(id)sender {
+    
+        self.textFieldSearch.text = @"";
+        allBill = [Bill allObjects];
         [self.tableView reloadData];
-    }
+    
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller
@@ -174,5 +166,33 @@
             }
         [self dismissModalViewControllerAnimated:YES];
     
+}
+
+//resing all TF
+- (void)hideKeyBoard{
+    [self.view endEditing:YES];
+}
+- (IBAction)textFieldChanged:(id)sender {
+    NSLog(@"textFieldChanged");
+    if ([self.textFieldSearch.text isEqualToString:@""]) {
+        NSLog(@"Vide");
+        [self buttonDelete:self];
+    }else{
+        /*
+         NSMutableArray* arrayPleinCell;
+         
+         for (int i = 0; i <= allBill.count; i++) {
+         [arrayPleinCell insertObject:[[allBill objectAtIndex:i] name] atIndex:i];
+         }
+         
+         */
+        
+        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"name CONTAINS[c] '%@'", self.textFieldSearch.text]];
+        
+        allBill = [Bill allObjects];
+        allBill = [allBill objectsWithPredicate:pred];
+        [self.tableView reloadData];
+    }
+
 }
 @end

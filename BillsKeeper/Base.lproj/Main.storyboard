@@ -140,12 +140,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bills Keeper" id="LZX-Du-PRN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="C6d-LT-36p">
+                        <barButtonItem key="leftBarButtonItem" image="csv-50.png" id="C6d-LT-36p">
                             <connections>
                                 <action selector="buttonSendCSV:" destination="nxK-3H-Gf6" id="Xzo-0a-l8D"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ntY-aN-mX6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ntY-aN-mX6">
                             <connections>
                                 <action selector="buttonAddBillTouch:" destination="nxK-3H-Gf6" id="p1R-0U-Je4"/>
                                 <segue destination="Rvn-9h-PEa" kind="show" identifier="showShoot" id="dhp-iP-Z9b"/>
@@ -189,22 +189,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-01-pUC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfr-A8-HQO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="j5I-Ow-hwH">
+                                        <rect key="frame" x="142" y="301" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hfr-A8-HQO" secondAttribute="bottom" id="0vS-zh-qry"/>
-                                    <constraint firstItem="hfr-A8-HQO" firstAttribute="leading" secondItem="kFE-01-pUC" secondAttribute="leading" id="EVZ-Ez-lgd"/>
-                                    <constraint firstItem="hfr-A8-HQO" firstAttribute="top" secondItem="kFE-01-pUC" secondAttribute="top" id="MjW-N5-rTH"/>
-                                    <constraint firstItem="hfr-A8-HQO" firstAttribute="width" secondItem="kFE-01-pUC" secondAttribute="width" id="Nk9-oW-QPk"/>
-                                    <constraint firstItem="hfr-A8-HQO" firstAttribute="height" secondItem="kFE-01-pUC" secondAttribute="height" id="a8k-EX-ebV"/>
-                                    <constraint firstAttribute="trailing" secondItem="hfr-A8-HQO" secondAttribute="trailing" id="iL9-Hy-dXv"/>
+                                    <constraint firstAttribute="centerX" secondItem="j5I-Ow-hwH" secondAttribute="centerX" constant="-0.5" id="Kuo-9U-y2F"/>
+                                    <constraint firstAttribute="centerY" secondItem="j5I-Ow-hwH" secondAttribute="centerY" constant="-35.5" id="ziY-K4-9zZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="j5I-Ow-hwH" secondAttribute="bottom" constant="230" id="zjq-0w-bjJ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zjq-0w-bjJ"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -254,7 +253,7 @@
                                                     <rect key="frame" x="46" y="263" width="264" height="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="emergencyCall"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-ld-nCm">
                                                     <rect key="frame" x="8" y="9" width="50" height="50"/>
@@ -382,7 +381,7 @@
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="EIw-YV-KKK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="29"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="emergencyCall" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="Dib-Xh-w1v"/>
@@ -575,7 +574,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-lJ-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-138"/>
+            <point key="canvasLocation" x="1593" y="-263"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n0S-f6-Tlq">
@@ -601,11 +600,12 @@
         <image name="backInfoDetails.png" width="637" height="133"/>
         <image name="ball_point_pen-50-white.png" width="50" height="50"/>
         <image name="bill1.jpg" width="535" height="712"/>
+        <image name="csv-50.png" width="32" height="32"/>
         <image name="left-50-white.png" width="50" height="50"/>
         <image name="newbackdegrad.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1VM-eO-1xZ"/>
+        <segue reference="rE6-5e-zip"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

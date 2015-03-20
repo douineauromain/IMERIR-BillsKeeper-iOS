@@ -17,6 +17,7 @@
 @interface ListBillsTableViewController (){
     RLMResults *allBill;
     NSString *csvText;
+    NSString *csvTextFirstLine;
 }
 @end
 
@@ -26,13 +27,15 @@
     [super viewDidLoad];
 
     csvText = [[NSString alloc] init];
-    csvText = @"Bill Name;Category;Date;Amount;Description;imagelink\n";
+    csvTextFirstLine = @"Bill Name;Category;Date;Amount;Description;imagelink\n";
+    csvText = csvTextFirstLine;
     
     //searchbar
     self.textFieldSearch.delegate = self;
 }
 
 -(void) viewWillAppear:(BOOL)animated{
+    csvText = csvTextFirstLine;
     @try {
         allBill = [Bill allObjects];
         
@@ -168,6 +171,7 @@
         allBill = [Bill allObjects];
         allBill = [allBill objectsWithPredicate:pred];
         [self.tableView reloadData];
+        csvText = csvTextFirstLine;
     }
 }
 
@@ -175,6 +179,7 @@
     NSLog(@"endEditindSearch");
     [self.textFieldSearch resignFirstResponder];
     [searchBar resignFirstResponder];
+    csvText = csvTextFirstLine;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -182,11 +187,13 @@
     NSLog(@"clickedSearch");
     [self.textFieldSearch resignFirstResponder];
     [searchBar resignFirstResponder];
+    csvText = csvTextFirstLine;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"clickResultsList");
     [self.textFieldSearch resignFirstResponder];
+    csvText = csvTextFirstLine;
   
 
 }

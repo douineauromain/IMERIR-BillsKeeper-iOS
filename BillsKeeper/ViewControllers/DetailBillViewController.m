@@ -163,4 +163,8 @@
 - (void)hideKeyBoard{
     [self.view endEditing:YES];
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self hideKeyBoard];
+}
 @end

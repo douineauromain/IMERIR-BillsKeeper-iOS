@@ -22,7 +22,7 @@
         
         
     } else {
-        self.listCategory = [[NSUserDefaults standardUserDefaults] objectForKey:@"listCategory"];
+        self.listCategory = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"listCategory"]];
     }
 
 }
@@ -55,7 +55,9 @@
         
         [alert show];
     }else{
-        //[self.listCategory addObject:self.textFieldNewCategory.text];
+        NSString *stringToAdd = [[NSString alloc] init];
+        stringToAdd = self.textFieldNewCategory.text;
+        [self.listCategory addObject:stringToAdd];
         [self.tableView reloadData];
         self.textFieldNewCategory.text = @"";
         [[NSUserDefaults standardUserDefaults] setObject:self.listCategory forKey:@"listCategory"];

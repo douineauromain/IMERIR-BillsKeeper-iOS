@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.listCategory = [[NSMutableArray alloc] init];
+
     self.listCategory = [NSMutableArray arrayWithObjects:@"Hébergement", @"Restauration", @"Transport", @"Autres", nil];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -44,14 +49,11 @@
         
         [alert show];
     }else{
+        //self.listCategory = [NSMutableArray arrayWithObjects:@"Hébergement", @"Restauration", @"Transport", @"Autres", nil];
         [self.listCategory addObject:self.textFieldNewCategory.text];
         [self.tableView reloadData];
         self.textFieldNewCategory.text = @"";
     }
-}
-
-- (IBAction)buttonBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

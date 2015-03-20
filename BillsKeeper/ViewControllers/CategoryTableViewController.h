@@ -11,9 +11,7 @@
 
 @interface CategoryTableViewController : UITableViewController
 
-
 - (IBAction)buttonNewCategory:(id)sender;
-- (IBAction)buttonBack:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldNewCategory;
 
 @end

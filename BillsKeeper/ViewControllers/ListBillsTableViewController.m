@@ -16,6 +16,7 @@
 
 @interface ListBillsTableViewController (){
     RLMResults *allBill;
+    NSString *csvText;
 }
 @end
 
@@ -46,6 +47,9 @@
 //    [realm addObject:billTest];
 //    [realm commitWriteTransaction];
 
+    csvText = [[NSString alloc] init];
+    csvText = @"Bill Name;Category;Date;Amount\n";
+    
     
     
 }
@@ -92,11 +96,13 @@
     cell.category.text = theBill.category;
     NSDate *theBillDate = theBill.dateBill;
     cell.dateBill.text = [NSDate stringForDisplayFromDate:theBillDate];
-    cell.amount.text = [NSString stringWithFormat:@"%f",theBill.amount];
+    cell.amount.text = [NSString stringWithFormat:@"%2.f",theBill.amount];
     
     UIImage *theBillImage = [UIImage imageWithScan:theBill.imageLowLink];
     cell.image.image = theBillImage;
     
+    //CSV Generation
+    csvText = [csvText stringByAppendingString:[NSString stringWithFormat:@"%@;%@;%@;%@\n", theBill.name, theBill.category, [NSDate stringFromDate:theBill.dateBill], [NSString stringWithFormat:@"%2.f",theBill.amount]]];
     
     return cell;
 }

@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @interface ListBillsTableViewController : UITableViewController
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonAddBill;
+@property (strong) MFMailComposeViewController* sendCSVMail;
+- (IBAction)buttonSendCSV:(id)sender;
 
 @end

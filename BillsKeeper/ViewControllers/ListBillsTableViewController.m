@@ -13,10 +13,12 @@
 #import "NSDate+Helper.h"
 #import "UIImage+loadScan.h"
 #import "DetailBillViewController.h"
+//#import <MessageUI/MessageUI.h>
 
 @interface ListBillsTableViewController (){
     RLMResults *allBill;
     NSString *csvText;
+    //MFMailComposeViewController* SendMailCSV;
 }
 @end
 
@@ -49,9 +51,6 @@
 
     csvText = [[NSString alloc] init];
     csvText = @"Bill Name;Category;Date;Amount\n";
-    
-    
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -59,7 +58,7 @@
         allBill = [Bill allObjects];
         
         Bill *aBill = [allBill objectAtIndex:0];
-        NSLog(aBill.name);
+        NSLog(@"%@", aBill.name);
     }
     @catch (NSException *exception) {
         NSLog(@"La base est vide");
@@ -77,8 +76,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -112,43 +109,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetailsBill"]) {
@@ -163,7 +123,22 @@
     // Pass the selected object to the new view controller.
 }
 
-
-
-
+- (IBAction)buttonSendCSV:(id)sender {
+    NSData* CSVattachment = [NSData dataWithContentsOfFile:csvText];
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    NSString* filePath = [documentsDirectory stringByAppendingPathComponent:@"BillsCSV.txt"];
+    
+    [csvText writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    /*self.sendCSVMail = [[MFMailComposeViewController alloc]init];
+    self.sendCSVMail.mailComposeDelegate = self;
+    [self.sendCSVMail setSubject:@"Test CSV"];
+    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:@"Ressources/*********" fileName:;]
+    
+    [self.sendCSVMail setMessageBody:@"CSV AUTO" isHTML:NO];
+     [self presentModalViewController:self.sendCSVMail animated:YES];*/
+}
 @end

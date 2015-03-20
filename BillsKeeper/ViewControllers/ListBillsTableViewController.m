@@ -133,12 +133,12 @@
     [csvText writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
     
-    /*self.sendCSVMail = [[MFMailComposeViewController alloc]init];
+    self.sendCSVMail = [[MFMailComposeViewController alloc]init];
     self.sendCSVMail.mailComposeDelegate = self;
     [self.sendCSVMail setSubject:@"Test CSV"];
-    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:@"Ressources/*********" fileName:;]
+    [self.sendCSVMail addAttachmentData:CSVattachment mimeType:(@"%@", documentsDirectory) fileName:@"BillsCSV.txt"];
     
     [self.sendCSVMail setMessageBody:@"CSV AUTO" isHTML:NO];
-     [self presentModalViewController:self.sendCSVMail animated:YES];*/
+     [self presentModalViewController:self.sendCSVMail animated:YES];
 }
 @end

@@ -13,12 +13,10 @@
 #import "NSDate+Helper.h"
 #import "UIImage+loadScan.h"
 #import "DetailBillViewController.h"
-//#import <MessageUI/MessageUI.h>
 
 @interface ListBillsTableViewController (){
     RLMResults *allBill;
     NSString *csvText;
-    //MFMailComposeViewController* SendMailCSV;
 }
 @end
 
@@ -26,28 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-//    //REALM CERATION OBJETS TEST
-//    // Create object
-//    Bill *billTest = [[Bill alloc] init];
-//    billTest.name = @"Facture test";
-//    billTest.imageLink = @"test.png";
-//    
-//    // Get the default Realm
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    // You only need to do this once (per thread)
-//    
-//    // Add to Realm with transaction
-//    [realm beginWriteTransaction];
-//    [realm addObject:billTest];
-//    [realm commitWriteTransaction];
 
     csvText = [[NSString alloc] init];
     csvText = @"Bill Name;Category;Date;Amount;Description;imagelink\n";
@@ -75,9 +51,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     //gesture recognizer for TF
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
-                                           initWithTarget:self
-                                           action:@selector(hideKeyBoard)];
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,12 +69,10 @@
     return allBill.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BillsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"billCell" forIndexPath:indexPath];
     
     // Configure the cell...
-   
     Bill *theBill = [allBill objectAtIndex:indexPath.row];
     cell.name.text = theBill.name;
     cell.category.text = theBill.category;
@@ -127,12 +99,9 @@
         DBVC.fromShoot = [NSNumber numberWithBool:NO]
         ;
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 - (IBAction)buttonSendCSV:(id)sender {
-    
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];
     NSString* filePath = [documentsDirectory stringByAppendingPathComponent:@"Bills.csv"];
@@ -140,7 +109,6 @@
     [csvText writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
     NSData* CSVattachment = [NSData dataWithContentsOfFile:filePath];
-    
     
     self.sendCSVMail = [[MFMailComposeViewController alloc]init];
     self.sendCSVMail.mailComposeDelegate = self;
@@ -152,23 +120,20 @@
 }
 
 - (void)buttonDelete:(id)sender {
-    
         self.textFieldSearch.text = @"";
         allBill = [Bill allObjects];
         [self.tableView reloadData];
-    
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller
          didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
-       if (result) {
-                NSLog(@"Result : %d",result);
-            }
-        if (error) {
-                NSLog(@"Error : %@",error);
-            }
-        [self dismissModalViewControllerAnimated:YES];
-    
+    if (result) {
+        NSLog(@"Result : %d",result);
+    }
+    if (error) {
+        NSLog(@"Error : %@",error);
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 //resing all TF
@@ -181,22 +146,12 @@
         NSLog(@"Vide");
         [self buttonDelete:self];
     }else{
-        /*
-         NSMutableArray* arrayPleinCell;
-         
-         for (int i = 0; i <= allBill.count; i++) {
-         [arrayPleinCell insertObject:[[allBill objectAtIndex:i] name] atIndex:i];
-         }
-         
-         */
-        
         NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"name CONTAINS[c] '%@'", self.textFieldSearch.text]];
         
         allBill = [Bill allObjects];
         allBill = [allBill objectsWithPredicate:pred];
         [self.tableView reloadData];
     }
-
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{

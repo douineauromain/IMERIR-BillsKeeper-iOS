@@ -20,5 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textFeildAmout;
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
+- (IBAction)buttonSaveTouch:(id)sender;
 
 @end

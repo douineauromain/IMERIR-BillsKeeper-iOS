@@ -66,6 +66,11 @@
     }
     
     [self.tableView reloadData];
+    
+    //configuration navigation bar :
+    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -134,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="345"/>
+            <point key="canvasLocation" x="1169" y="459"/>
         </scene>
         <!--Shoot View Controller-->
         <scene sceneID="ZJC-RT-WPK">
@@ -205,8 +205,8 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backBlackDetail.png" translatesAutoresizingMaskIntoConstraints="NO" id="txM-dm-0Hz">
-                                                    <rect key="frame" x="0.0" y="-1" width="320" height="301"/>
+                                                <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBlackDetail.png" translatesAutoresizingMaskIntoConstraints="NO" id="txM-dm-0Hz">
+                                                    <rect key="frame" x="0.0" y="-18" width="320" height="318"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="117" id="h0J-KB-Y7M"/>
                                                     </constraints>
@@ -222,6 +222,16 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYa-Vh-pbe">
+                                                    <rect key="frame" x="265" y="8" width="47" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                    <state key="normal" title="Save">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonSaveTouch:" destination="CC5-5r-41Q" eventType="touchUpInside" id="qcd-yd-dnD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Sh5-Cp-dew" firstAttribute="trailing" secondItem="DtX-bh-cx8" secondAttribute="trailingMargin" id="3Ll-6P-I7r"/>
@@ -229,10 +239,10 @@
                                                 <constraint firstItem="Sh5-Cp-dew" firstAttribute="bottom" secondItem="kgI-G5-Bw3" secondAttribute="bottom" constant="-13" id="8DI-rm-oN7"/>
                                                 <constraint firstAttribute="trailing" secondItem="kgI-G5-Bw3" secondAttribute="trailing" id="Ddi-5f-aQ4"/>
                                                 <constraint firstItem="kgI-G5-Bw3" firstAttribute="top" secondItem="DtX-bh-cx8" secondAttribute="top" id="DkT-2O-AVv"/>
-                                                <constraint firstAttribute="bottom" secondItem="txM-dm-0Hz" secondAttribute="bottom" id="Ge4-3d-8em"/>
+                                                <constraint firstAttribute="bottom" secondItem="txM-dm-0Hz" secondAttribute="bottom" constant="-1" id="Ge4-3d-8em"/>
                                                 <constraint firstAttribute="bottom" secondItem="Sh5-Cp-dew" secondAttribute="bottom" constant="12" id="LBT-1i-dL8"/>
                                                 <constraint firstAttribute="trailing" secondItem="txM-dm-0Hz" secondAttribute="trailing" id="Plf-gB-ail"/>
-                                                <constraint firstItem="kgI-G5-Bw3" firstAttribute="height" secondItem="txM-dm-0Hz" secondAttribute="height" id="Px6-X9-OBg"/>
+                                                <constraint firstItem="kgI-G5-Bw3" firstAttribute="height" secondItem="txM-dm-0Hz" secondAttribute="height" constant="-20" id="Px6-X9-OBg"/>
                                                 <constraint firstAttribute="trailing" secondItem="kgI-G5-Bw3" secondAttribute="trailing" id="RKh-h2-433"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kgI-G5-Bw3" secondAttribute="bottom" constant="-9" id="k61-ju-BuQ"/>
                                                 <constraint firstItem="kgI-G5-Bw3" firstAttribute="leading" secondItem="DtX-bh-cx8" secondAttribute="leading" id="mEa-zO-k4u"/>
@@ -354,7 +364,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tr-bm-Xsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="-312"/>
+            <point key="canvasLocation" x="1182" y="-313"/>
         </scene>
         <!--Categories-->
         <scene sceneID="q0B-Qk-xiv">

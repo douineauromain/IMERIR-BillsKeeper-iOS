@@ -7,6 +7,7 @@
 //
 
 #import "DetailBillViewController.h"
+#import "ListBillsTableViewController.h"
 #import <Realm/Realm.h>
 #import "Bill.h"
 #import "UIImage+loadScan.h"
@@ -23,12 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //configuration navigation bar :
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     //autre
     [self.buttonCategory setTitle:@"Others" forState:UIControlStateNormal];
@@ -92,4 +90,9 @@ forBarMetrics:UIBarMetricsDefault];
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)buttonSaveTouch:(id)sender {
+//    ListBillsTableViewController *LBTVC = [[ListBillsTableViewController alloc] init];
+//    [self.navigationController showViewController:LBTVC sender:self];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

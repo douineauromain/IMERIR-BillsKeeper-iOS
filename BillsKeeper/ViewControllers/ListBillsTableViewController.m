@@ -84,7 +84,7 @@
     cell.image.image = theBillImage;
     
     //CSV Generation
-    csvText = [csvText stringByAppendingString:[NSString stringWithFormat:@"%@;%@;%@;%@;%@;%@\n", theBill.name, theBill.category, [NSDate stringFromDate:theBill.dateBill], [NSString stringWithFormat:@"%2.f",theBill.amount], theBill.descriptionBill, theBill.imageLink]];
+    csvText = [csvText stringByAppendingString:[NSString stringWithFormat:@"%@;%@;%@;%@;%@;%@\n", cell.name.text, cell.category.text, [NSDate stringFromDate:theBill.dateBill], cell.amount.text, theBill.descriptionBill, theBill.imageLink]];
     
     return cell;
 }

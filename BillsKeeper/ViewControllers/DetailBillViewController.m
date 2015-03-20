@@ -49,6 +49,13 @@
     animated:YES];
     }
     
+    //gesture recognizer for TF
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(hideKeyBoard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
+    
 }
 
 
@@ -106,7 +113,10 @@
     
     [realm beginWriteTransaction];
     aBill.name = self.textFeildName.text;
-    aBill.amount = [self.textFeildAmout.text floatValue];
+    
+    NSString *amountTextWithVirgule = self.textFeildAmout.text;
+    
+    aBill.amount = [[amountTextWithVirgule stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue];
     aBill.category = self.textFieldCategory.text;
     aBill.descriptionBill = self.textViewDescription.text;
     [realm commitWriteTransaction];
@@ -137,5 +147,10 @@
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Category type :" delegate:self cancelButtonTitle:@"Other" destructiveButtonTitle:nil otherButtonTitles:pickerArray[0], pickerArray[1],pickerArray[2],pickerArray[3], nil];
     
     [actionSheet showInView:self.view];
+}
+
+//resing all TF
+- (void)hideKeyBoard{
+    [self.view endEditing:YES];
 }
 @end

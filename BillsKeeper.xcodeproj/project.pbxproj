@@ -30,6 +30,7 @@
 		946C2ABA1ABC2E8400324BF0 /* left-50-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB91ABC2E8400324BF0 /* left-50-white.png */; };
 		946C2ABC1ABC300800324BF0 /* ball_point_pen-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2ABB1ABC300800324BF0 /* ball_point_pen-50.png */; };
 		946C2ABE1ABC306D00324BF0 /* ball_point_pen-50-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2ABD1ABC306D00324BF0 /* ball_point_pen-50-white.png */; };
+		946C2AC21ABC45B800324BF0 /* newbackdegrad.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AC11ABC45B800324BF0 /* newbackdegrad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		946C2AB91ABC2E8400324BF0 /* left-50-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-50-white.png"; sourceTree = "<group>"; };
 		946C2ABB1ABC300800324BF0 /* ball_point_pen-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball_point_pen-50.png"; sourceTree = "<group>"; };
 		946C2ABD1ABC306D00324BF0 /* ball_point_pen-50-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball_point_pen-50-white.png"; sourceTree = "<group>"; };
+		946C2AC11ABC45B800324BF0 /* newbackdegrad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newbackdegrad.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		943CDACB1ABAB4C000D4C186 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				946C2AC11ABC45B800324BF0 /* newbackdegrad.png */,
 				946C2ABD1ABC306D00324BF0 /* ball_point_pen-50-white.png */,
 				946C2ABB1ABC300800324BF0 /* ball_point_pen-50.png */,
 				946C2AB91ABC2E8400324BF0 /* left-50-white.png */,
@@ -340,6 +343,7 @@
 				943CDACD1ABAB4D100D4C186 /* bill1.jpg in Resources */,
 				943CDA951AB9BBA300D4C186 /* Main.storyboard in Resources */,
 				943CDA9A1AB9BBA300D4C186 /* LaunchScreen.xib in Resources */,
+				946C2AC21ABC45B800324BF0 /* newbackdegrad.png in Resources */,
 				946C2AB61ABB3DAA00324BF0 /* backBlackDetail.png in Resources */,
 				946C2AB81ABC2D2400324BF0 /* back-white.png in Resources */,
 				943CDA971AB9BBA300D4C186 /* Images.xcassets in Resources */,

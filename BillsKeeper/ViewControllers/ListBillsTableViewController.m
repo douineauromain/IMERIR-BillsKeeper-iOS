@@ -124,13 +124,14 @@
 }
 
 - (IBAction)buttonSendCSV:(id)sender {
-    NSData* CSVattachment = [NSData dataWithContentsOfFile:csvText];
     
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];
     NSString* filePath = [documentsDirectory stringByAppendingPathComponent:@"BillsCSV.txt"];
     
     [csvText writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
+    NSData* CSVattachment = [NSData dataWithContentsOfFile:filePath];
     
     
     self.sendCSVMail = [[MFMailComposeViewController alloc]init];
@@ -140,5 +141,17 @@
     
     [self.sendCSVMail setMessageBody:@"CSV AUTO" isHTML:NO];
      [self presentModalViewController:self.sendCSVMail animated:YES];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+       if (result) {
+                NSLog(@"Result : %d",result);
+            }
+        if (error) {
+                NSLog(@"Error : %@",error);
+            }
+        [self dismissModalViewControllerAnimated:YES];
+    
 }
 @end

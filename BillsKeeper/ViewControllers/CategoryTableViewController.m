@@ -16,8 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.listCategory = [[NSMutableArray alloc] init];
-    self.listCategory = [NSMutableArray arrayWithObjects:@"Hébergement", @"Restauration", @"Transport", @"Autres", nil];
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"listCategory"] == nil){
+        self.listCategory = [NSMutableArray arrayWithObjects:@"MacDo", nil];
+        [[NSUserDefaults standardUserDefaults] setObject:self.listCategory forKey:@"listCategory"];
+        
+        
+    } else {
+        self.listCategory = [[NSUserDefaults standardUserDefaults] objectForKey:@"listCategory"];
+    }
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -48,9 +55,10 @@
         
         [alert show];
     }else{
-        [self.listCategory addObject:self.textFieldNewCategory.text];
+        //[self.listCategory addObject:self.textFieldNewCategory.text];
         [self.tableView reloadData];
         self.textFieldNewCategory.text = @"";
+        [[NSUserDefaults standardUserDefaults] setObject:self.listCategory forKey:@"listCategory"];
     }
 }
 

@@ -570,6 +570,9 @@
                                     <state key="normal" title="Add">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buttonNewCategory:" destination="WCc-WR-17w" eventType="touchUpInside" id="Lm6-lL-6Rp"/>
+                                    </connections>
                                 </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSL-e9-nFZ">
                                     <rect key="frame" x="8" y="17" width="249" height="30"/>

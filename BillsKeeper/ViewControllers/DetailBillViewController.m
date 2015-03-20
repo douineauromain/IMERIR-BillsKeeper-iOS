@@ -28,6 +28,10 @@
     [super viewDidLoad];
     //configuration navigation bar :
     self.navigationController.navigationBar.translucent = NO;
+    //for full screen
+    self.wantsFullScreenLayout = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //--
     [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
@@ -88,6 +92,9 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated{
+    //scroll
+    [self.tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    
     //Bouton category
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"tempCategory"] == nil) {
         NSLog(@"Il n'y a pas de variable temporaire tempCategory");
@@ -115,8 +122,11 @@
     aBill.name = self.textFeildName.text;
     
     NSString *amountTextWithVirgule = self.textFeildAmout.text;
+    NSString *amountTextWithPoint = [amountTextWithVirgule stringByReplacingOccurrencesOfString:@"," withString:@"."];
+    float goodFloat = [[NSString stringWithFormat:@"%.2f", [amountTextWithPoint floatValue]] floatValue];;
     
-    aBill.amount = [[amountTextWithVirgule stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue];
+    NSLog(@"amount float : %f", goodFloat);
+    aBill.amount = goodFloat;
     aBill.category = self.textFieldCategory.text;
     aBill.descriptionBill = self.textViewDescription.text;
     [realm commitWriteTransaction];

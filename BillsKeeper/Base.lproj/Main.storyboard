@@ -18,7 +18,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search a bill" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-Kt-GEK">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search a bill" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-Kt-GEK">
                                     <rect key="frame" x="15" y="5" width="222" height="33"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="M9O-nw-JGn"/>
@@ -36,7 +36,7 @@
                                         </mask>
                                     </variation>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KU-JA-lFQ">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KU-JA-lFQ">
                                     <rect key="frame" x="257" y="6" width="48" height="30"/>
                                     <state key="normal" title="Search">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -279,7 +279,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ow7-pp-j7q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="ONk-f9-ECg">
                                 <cells>
@@ -291,11 +293,11 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" misplaced="YES" image="bill1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kgI-G5-Bw3">
                                                     <rect key="frame" x="0.0" y="14" width="320" height="284"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="newbackdegrad.png" translatesAutoresizingMaskIntoConstraints="NO" id="txM-dm-0Hz">
-                                                    <rect key="frame" x="0.0" y="-2" width="320" height="303"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbackdegrad.png" translatesAutoresizingMaskIntoConstraints="NO" id="txM-dm-0Hz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Facture X" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-Cp-dew">
-                                                    <rect key="frame" x="46" y="263" width="254" height="27"/>
+                                                    <rect key="frame" x="46" y="263" width="264" height="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="emergencyCall"/>
@@ -341,10 +343,12 @@
                                                 <constraint firstItem="txM-dm-0Hz" firstAttribute="width" secondItem="kgI-G5-Bw3" secondAttribute="width" id="QpC-AA-7Wj"/>
                                                 <constraint firstAttribute="trailing" secondItem="kgI-G5-Bw3" secondAttribute="trailing" id="RKh-h2-433"/>
                                                 <constraint firstItem="kgI-G5-Bw3" firstAttribute="leading" secondItem="DtX-bh-cx8" secondAttribute="leading" id="RbZ-ZR-C8L"/>
+                                                <constraint firstItem="Sh5-Cp-dew" firstAttribute="centerY" secondItem="BR4-hf-mAe" secondAttribute="centerY" id="VP2-cr-Z7N"/>
                                                 <constraint firstItem="txM-dm-0Hz" firstAttribute="trailing" secondItem="kgI-G5-Bw3" secondAttribute="trailing" id="Wgl-Ug-n7g"/>
                                                 <constraint firstAttribute="bottom" secondItem="BR4-hf-mAe" secondAttribute="bottom" constant="12" id="YZV-TV-xaC"/>
                                                 <constraint firstItem="txM-dm-0Hz" firstAttribute="height" secondItem="kgI-G5-Bw3" secondAttribute="height" id="Ydz-yu-KLQ"/>
                                                 <constraint firstItem="kgI-G5-Bw3" firstAttribute="top" secondItem="DtX-bh-cx8" secondAttribute="top" id="aKr-Rm-zUj"/>
+                                                <constraint firstItem="Sh5-Cp-dew" firstAttribute="trailing" secondItem="txM-dm-0Hz" secondAttribute="trailing" constant="-10" id="cUZ-HT-Q1A"/>
                                                 <constraint firstItem="txM-dm-0Hz" firstAttribute="height" secondItem="kgI-G5-Bw3" secondAttribute="height" id="f8h-jA-4is"/>
                                                 <constraint firstItem="txM-dm-0Hz" firstAttribute="leading" secondItem="kgI-G5-Bw3" secondAttribute="leading" id="hUz-NT-hBx"/>
                                                 <constraint firstItem="ntS-ld-nCm" firstAttribute="leading" secondItem="DtX-bh-cx8" secondAttribute="leadingMargin" id="ike-Sb-sdO"/>
@@ -384,13 +388,14 @@
                                                     <exclude reference="oGm-ry-BLx"/>
                                                     <exclude reference="rfQ-bJ-6jp"/>
                                                     <exclude reference="uro-BD-jow"/>
-                                                    <exclude reference="4e1-i8-d1f"/>
                                                     <exclude reference="3Ll-6P-I7r"/>
                                                     <exclude reference="8DI-rm-oN7"/>
                                                     <exclude reference="LBT-1i-dL8"/>
                                                     <exclude reference="itR-D0-Pea"/>
                                                     <exclude reference="nVy-QS-8cR"/>
+                                                    <exclude reference="u8F-wx-y9X"/>
                                                     <exclude reference="wAc-Zp-51l"/>
+                                                    <exclude reference="4e1-i8-d1f"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -639,7 +644,7 @@
         <image name="newbackdegrad.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rE6-5e-zip"/>
+        <segue reference="1VM-eO-1xZ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.3294117647" green="0.24313725489999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

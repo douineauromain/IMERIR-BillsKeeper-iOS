@@ -20,3 +20,5 @@ DerivedData
 BillsKeeper.xcodeproj/project.xcworkspace/xcuserdata/rcdsm.xcuserdatad/UserInterfaceState.xcuserstate
 
 BillsKeeper.xcodeproj/xcuserdata/rcdsm.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+
+*.xcuserstate

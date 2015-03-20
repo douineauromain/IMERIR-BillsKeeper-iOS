@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface ListBillsTableViewController : UITableViewController <UITextFieldDelegate>
+@interface ListBillsTableViewController : UITableViewController <UITextFieldDelegate,UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonAddBill;
 @property (strong) MFMailComposeViewController* sendCSVMail;
 - (IBAction)buttonSendCSV:(id)sender;
 - (IBAction)buttonDelete:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldSearch;
+@property (weak, nonatomic) IBOutlet UISearchBar *textFieldSearch;
 - (void)textFieldChanged:(id)sender;
 
 @end

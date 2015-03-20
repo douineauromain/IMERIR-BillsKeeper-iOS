@@ -18,52 +18,22 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search a bill" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-Kt-GEK">
-                                    <rect key="frame" x="10" y="8" width="300" height="33"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="M9O-nw-JGn"/>
-                                        <constraint firstAttribute="width" constant="50" id="QQG-4T-q7n"/>
-                                        <constraint firstAttribute="width" constant="248" id="bJ1-uQ-zyb"/>
-                                        <constraint firstAttribute="height" constant="33" id="bZS-Wy-wd9"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="M9O-nw-JGn"/>
-                                            <exclude reference="QQG-4T-q7n"/>
-                                            <exclude reference="bJ1-uQ-zyb"/>
-                                        </mask>
-                                    </variation>
-                                    <connections>
-                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="touchDown" id="42m-Rv-qFO"/>
-                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="editingDidEnd" id="irr-2l-1Zo"/>
-                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="editingChanged" id="spq-rO-Liu"/>
-                                        <action selector="textFieldChanged:" destination="nxK-3H-Gf6" eventType="valueChanged" id="zUe-uj-q6k"/>
-                                    </connections>
-                                </textField>
+                                <searchBar contentMode="redraw" placeholder="Search a bill" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljI-LO-Q4p">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.99681810329999998" blue="0.27328260240000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="bottom" secondItem="Ytw-Si-1Jn" secondAttribute="bottomMargin" id="YM9-D2-5FX"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="leading" secondItem="Ytw-Si-1Jn" secondAttribute="leading" constant="10" id="ZXO-yP-1Dv"/>
-                                <constraint firstAttribute="centerY" secondItem="bXw-Kt-GEK" secondAttribute="centerY" constant="1" id="cLx-uY-MxK"/>
-                                <constraint firstAttribute="trailing" secondItem="bXw-Kt-GEK" secondAttribute="trailing" constant="10" id="htv-l0-0hG"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="top" secondItem="Ytw-Si-1Jn" secondAttribute="top" constant="8" id="khh-rG-CS9"/>
-                                <constraint firstItem="bXw-Kt-GEK" firstAttribute="leading" secondItem="Ytw-Si-1Jn" secondAttribute="leading" constant="17" id="msu-4y-97S"/>
-                                <constraint firstAttribute="centerY" secondItem="bXw-Kt-GEK" secondAttribute="centerY" constant="1" id="unE-ls-INc"/>
-                                <constraint firstAttribute="centerY" secondItem="bXw-Kt-GEK" secondAttribute="centerY" constant="1" id="vIY-MX-WgY"/>
+                                <constraint firstAttribute="trailing" secondItem="ljI-LO-Q4p" secondAttribute="trailing" id="ON5-xD-r5I"/>
+                                <constraint firstAttribute="bottom" secondItem="ljI-LO-Q4p" secondAttribute="bottom" id="ku4-tz-w1b"/>
+                                <constraint firstItem="ljI-LO-Q4p" firstAttribute="leading" secondItem="Ytw-Si-1Jn" secondAttribute="leading" id="npc-En-lwy"/>
+                                <constraint firstItem="ljI-LO-Q4p" firstAttribute="top" secondItem="Ytw-Si-1Jn" secondAttribute="top" id="uTi-Gf-Al2"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="YM9-D2-5FX"/>
-                                    <exclude reference="cLx-uY-MxK"/>
-                                    <exclude reference="msu-4y-97S"/>
-                                    <exclude reference="unE-ls-INc"/>
-                                    <exclude reference="vIY-MX-WgY"/>
-                                </mask>
-                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="billCell" rowHeight="83" id="TH7-hv-ZLb" customClass="BillsViewCell">
@@ -185,7 +155,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="buttonAddBill" destination="ntY-aN-mX6" id="xpA-Yg-g3p"/>
-                        <outlet property="textFieldSearch" destination="bXw-Kt-GEK" id="Di9-nV-5iq"/>
+                        <outlet property="textFieldSearch" destination="ljI-LO-Q4p" id="aRm-vO-32r"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsg-jZ-oWY" userLabel="First Responder" sceneMemberID="firstResponder"/>

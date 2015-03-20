@@ -50,7 +50,10 @@
 //    [realm commitWriteTransaction];
 
     csvText = [[NSString alloc] init];
-    csvText = @"Bill Name;Category;Date;Amount\n";
+    csvText = @"Bill Name;Category;Date;Amount;Description;imagelink\n";
+    
+    //searchbar
+    self.textFieldSearch.delegate = self;
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -109,7 +112,7 @@
     cell.image.image = theBillImage;
     
     //CSV Generation
-    csvText = [csvText stringByAppendingString:[NSString stringWithFormat:@"%@;%@;%@;%@\n", theBill.name, theBill.category, [NSDate stringFromDate:theBill.dateBill], [NSString stringWithFormat:@"%2.f",theBill.amount]]];
+    csvText = [csvText stringByAppendingString:[NSString stringWithFormat:@"%@;%@;%@;%@;%@;%@\n", theBill.name, theBill.category, [NSDate stringFromDate:theBill.dateBill], [NSString stringWithFormat:@"%2.f",theBill.amount], theBill.descriptionBill, theBill.imageLink]];
     
     return cell;
 }
@@ -172,7 +175,7 @@
 - (void)hideKeyBoard{
     [self.view endEditing:YES];
 }
-- (IBAction)textFieldChanged:(id)sender {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     NSLog(@"textFieldChanged");
     if ([self.textFieldSearch.text isEqualToString:@""]) {
         NSLog(@"Vide");
@@ -195,4 +198,25 @@
     }
 
 }
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    NSLog(@"endEditindSearch");
+    [self.textFieldSearch resignFirstResponder];
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    NSLog(@"clickedSearch");
+    [self.textFieldSearch resignFirstResponder];
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    NSLog(@"clickResultsList");
+    [self.textFieldSearch resignFirstResponder];
+  
+
+}
+
 @end

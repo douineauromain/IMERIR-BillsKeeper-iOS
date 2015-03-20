@@ -26,6 +26,10 @@
 		9468EA0D1ABAD65B00D47C87 /* ShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */; };
 		946C2AB41ABB26C100324BF0 /* backInfoDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB31ABB26C100324BF0 /* backInfoDetails.png */; };
 		946C2AB61ABB3DAA00324BF0 /* backBlackDetail.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB51ABB3DAA00324BF0 /* backBlackDetail.png */; };
+		946C2AB81ABC2D2400324BF0 /* back-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB71ABC2D2400324BF0 /* back-white.png */; };
+		946C2ABA1ABC2E8400324BF0 /* left-50-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2AB91ABC2E8400324BF0 /* left-50-white.png */; };
+		946C2ABC1ABC300800324BF0 /* ball_point_pen-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2ABB1ABC300800324BF0 /* ball_point_pen-50.png */; };
+		946C2ABE1ABC306D00324BF0 /* ball_point_pen-50-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C2ABD1ABC306D00324BF0 /* ball_point_pen-50-white.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		9468EA0C1ABAD65B00D47C87 /* ShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShootViewController.m; path = ViewControllers/ShootViewController.m; sourceTree = "<group>"; };
 		946C2AB31ABB26C100324BF0 /* backInfoDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backInfoDetails.png; sourceTree = "<group>"; };
 		946C2AB51ABB3DAA00324BF0 /* backBlackDetail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBlackDetail.png; sourceTree = "<group>"; };
+		946C2AB71ABC2D2400324BF0 /* back-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-white.png"; sourceTree = "<group>"; };
+		946C2AB91ABC2E8400324BF0 /* left-50-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-50-white.png"; sourceTree = "<group>"; };
+		946C2ABB1ABC300800324BF0 /* ball_point_pen-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball_point_pen-50.png"; sourceTree = "<group>"; };
+		946C2ABD1ABC306D00324BF0 /* ball_point_pen-50-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball_point_pen-50-white.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,10 @@
 		943CDACB1ABAB4C000D4C186 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				946C2ABD1ABC306D00324BF0 /* ball_point_pen-50-white.png */,
+				946C2ABB1ABC300800324BF0 /* ball_point_pen-50.png */,
+				946C2AB91ABC2E8400324BF0 /* left-50-white.png */,
+				946C2AB71ABC2D2400324BF0 /* back-white.png */,
 				946C2AB51ABB3DAA00324BF0 /* backBlackDetail.png */,
 				946C2AB31ABB26C100324BF0 /* backInfoDetails.png */,
 				943CDB0B1ABADD7F00D4C186 /* specialClass */,
@@ -324,12 +336,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946C2ABE1ABC306D00324BF0 /* ball_point_pen-50-white.png in Resources */,
 				943CDACD1ABAB4D100D4C186 /* bill1.jpg in Resources */,
 				943CDA951AB9BBA300D4C186 /* Main.storyboard in Resources */,
 				943CDA9A1AB9BBA300D4C186 /* LaunchScreen.xib in Resources */,
 				946C2AB61ABB3DAA00324BF0 /* backBlackDetail.png in Resources */,
+				946C2AB81ABC2D2400324BF0 /* back-white.png in Resources */,
 				943CDA971AB9BBA300D4C186 /* Images.xcassets in Resources */,
 				946C2AB41ABB26C100324BF0 /* backInfoDetails.png in Resources */,
+				946C2ABC1ABC300800324BF0 /* ball_point_pen-50.png in Resources */,
+				946C2ABA1ABC2E8400324BF0 /* left-50-white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

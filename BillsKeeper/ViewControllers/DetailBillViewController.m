@@ -8,6 +8,7 @@
 
 #import "DetailBillViewController.h"
 #import "ListBillsTableViewController.h"
+#import "CategoryTableViewController.h"
 #import <Realm/Realm.h>
 #import "Bill.h"
 #import "UIImage+loadScan.h"
@@ -16,6 +17,7 @@
 @interface DetailBillViewController (){
     RLMResults *allBill;
     Bill *aBill;
+    NSMutableArray *pickerArray;
 }
 
 @end
@@ -29,8 +31,11 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
+    //picker
+    pickerArray = [NSMutableArray arrayWithArray:@[@"New Category",                  @"Restaurant",@"Hosting",@"Transport"]];
+    
     //autre
-    [self.buttonCategory setTitle:@"Others" forState:UIControlStateNormal];
+    
     
     NSLog(@"indexOfSelectedCellReceived : %d", [self.indexOfSelectedCellReceived intValue]);
     
@@ -60,7 +65,7 @@
         self.imageBillHigh.image = [UIImage imageWithScan:aBill.imageLink];
         self.textFeildName.text = aBill.name;
         self.textFeildAmout.text = [NSString stringWithFormat:@"%2.f",aBill.amount];
-        self.buttonCategory.titleLabel.text = aBill.category;
+        self.textFieldCategory.text = aBill.category;
         self.labelDate.text = [NSDate stringForDisplayFromDate:aBill.dateBill];
         [self.textViewDescription setText:aBill.descriptionBill];
         
@@ -102,11 +107,35 @@
     [realm beginWriteTransaction];
     aBill.name = self.textFeildName.text;
     aBill.amount = [self.textFeildAmout.text floatValue];
-    aBill.category = self.buttonCategory.titleLabel.text;
+    aBill.category = self.textFieldCategory.text;
     aBill.descriptionBill = self.textViewDescription.text;
-    
     [realm commitWriteTransaction];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {     switch (buttonIndex) {
+    case 0:
+//        self.textFieldCategory.text = pickerArray[0];
+        [self performSegueWithIdentifier:@"showCategory" sender:self];
+        
+        break;
+    case 1:
+        self.textFieldCategory.text = pickerArray[1];
+        break;
+    case 2:
+        self.textFieldCategory.text = pickerArray[2];
+        break;
+    case 3:
+        self.textFieldCategory.text = pickerArray[3];
+        break;
+}
+   
+    
+}
+- (IBAction)textfieldCategoryEditingDidBegin:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Category type :" delegate:self cancelButtonTitle:@"Other" destructiveButtonTitle:nil otherButtonTitles:pickerArray[0], pickerArray[1],pickerArray[2],pickerArray[3], nil];
+    
+    [actionSheet showInView:self.view];
 }
 @end

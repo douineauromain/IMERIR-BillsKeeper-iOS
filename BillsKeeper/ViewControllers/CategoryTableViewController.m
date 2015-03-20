@@ -32,6 +32,10 @@
     return cell;
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[NSUserDefaults standardUserDefaults] setValue:[self.listCategory objectAtIndex:indexPath.row] forKey:@"tempCategory"];
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailBillViewController : UITableViewController
+@interface DetailBillViewController : UITableViewController <UIActionSheetDelegate,UITextFieldDelegate>
 
 @property (strong) NSNumber *indexOfSelectedCellReceived;
 @property (strong) NSNumber *fromShoot;
@@ -24,5 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
 - (IBAction)buttonSaveTouch:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *textViewDescription;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldCategory;
+- (IBAction)textfieldCategoryEditingDidBegin:(id)sender;
 
 @end

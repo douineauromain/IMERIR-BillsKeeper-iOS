@@ -15,6 +15,7 @@
 
 @interface DetailBillViewController (){
     RLMResults *allBill;
+    Bill *aBill;
 }
 
 @end
@@ -52,7 +53,7 @@
     @try {
         allBill = [Bill allObjects];
         
-        Bill *aBill = [allBill objectAtIndex:[self.indexOfSelectedCellReceived intValue]];
+        aBill = [allBill objectAtIndex:[self.indexOfSelectedCellReceived intValue]];
         NSLog(aBill.name);
         
         //mise a jour de l'interface
@@ -61,6 +62,7 @@
         self.textFeildAmout.text = [NSString stringWithFormat:@"%2.f",aBill.amount];
         self.buttonCategory.titleLabel.text = aBill.category;
         self.labelDate.text = [NSDate stringForDisplayFromDate:aBill.dateBill];
+        [self.textViewDescription setText:aBill.descriptionBill];
         
 
     }
@@ -93,6 +95,18 @@
 - (IBAction)buttonSaveTouch:(id)sender {
 //    ListBillsTableViewController *LBTVC = [[ListBillsTableViewController alloc] init];
 //    [self.navigationController showViewController:LBTVC sender:self];
+    
+    // Get the default Realm
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm beginWriteTransaction];
+    aBill.name = self.textFeildName.text;
+    aBill.amount = [self.textFeildAmout.text floatValue];
+    aBill.category = self.buttonCategory.titleLabel.text;
+    aBill.descriptionBill = self.textViewDescription.text;
+    
+    [realm commitWriteTransaction];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

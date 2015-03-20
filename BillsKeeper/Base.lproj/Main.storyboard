@@ -364,6 +364,7 @@
                         <outlet property="labelDate" destination="jKH-R1-opX" id="Bzl-Kr-4Qa"/>
                         <outlet property="textFeildAmout" destination="MvK-4A-T5s" id="Htb-ES-A99"/>
                         <outlet property="textFeildName" destination="Sh5-Cp-dew" id="P0l-KE-WLP"/>
+                        <outlet property="textViewDescription" destination="kTt-U0-pvI" id="Pvq-lR-UDD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tr-bm-Xsz" userLabel="First Responder" sceneMemberID="firstResponder"/>

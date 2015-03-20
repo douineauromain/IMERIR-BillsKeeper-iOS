@@ -13,6 +13,8 @@
 @property (strong) NSNumber *indexOfSelectedCellReceived;
 @property (strong) NSNumber *fromShoot;
 
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageBillHigh;
 @property (weak, nonatomic) IBOutlet UITextField *textFeildName;
 
@@ -21,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFeildAmout;
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
 - (IBAction)buttonSaveTouch:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *textViewDescription;
 
 @end
